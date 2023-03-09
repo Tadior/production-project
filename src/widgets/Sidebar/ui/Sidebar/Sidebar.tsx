@@ -6,7 +6,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-	className?: string
+  className?: string;
 }
 
 export function Sidebar(props: PropsWithChildren<SidebarProps>) {

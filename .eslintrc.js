@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:i18next/recommended",
+    "prettier",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -37,6 +42,7 @@ module.exports = {
     semi: "off",
     "i18next/no-literal-string": ["error", { markupOnly: true }],
     "max-len": ["error", { ignoreComments: true }],
+    "linebreak-style": "off",
   },
   globals: {
     __IS_DEV__: true,

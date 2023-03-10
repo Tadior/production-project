@@ -1,5 +1,6 @@
 {
-	"example": "example",
-	"mainPage": "Main page",
-	"language": "English"
+  "example": "example",
+  "mainPage": "Main page",
+  "language": "English",
+  "not-found-page": "Not found page"
 }

@@ -2,5 +2,7 @@
   "example": "example",
   "mainPage": "Main page",
   "language": "English",
-  "not-found-page": "Not found page"
+  "not-found-page": "Not found page",
+  "unexpected-error": "unexpected error",
+  "reload-page": "reload page"
 }

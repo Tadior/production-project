@@ -2,5 +2,8 @@
   "aboutPage": "aboutPage",
   "language": "language",
   "mainPage": "mainPage",
-  "not-found-page": "not-found-page"
+  "not-found-page": "not-found-page",
+  "reload-page": "reload-page",
+  "throw error": "throw error",
+  "unexpected-error": "unexpected-error"
 }

@@ -40,11 +40,22 @@ module.exports = {
     "no-underscore-dangle": "off",
     "no-tabs": 0,
     semi: "off",
-    "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, ignoreAttribute: ["data-testid"] },
+    ],
     "max-len": ["error", { ignoreComments: true }],
     "linebreak-style": "off",
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
 };

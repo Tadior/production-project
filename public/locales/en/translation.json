@@ -4,5 +4,6 @@
   "language": "English",
   "not-found-page": "Not found page",
   "unexpected-error": "unexpected error",
-  "reload-page": "reload page"
+  "reload-page": "reload page",
+  "sidebar-button": "Toggle"
 }

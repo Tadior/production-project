@@ -3,6 +3,7 @@ import { PropsWithChildren, useState } from "react";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { Button } from "shared/ui/Button/Button";
+import { t } from "i18next";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -25,7 +26,7 @@ export function Sidebar(props: PropsWithChildren<SidebarProps>) {
       ])}
     >
       <Button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
-        Toggle
+        {t("sidebar-button")}
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />

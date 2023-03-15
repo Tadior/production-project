@@ -1,9 +1,12 @@
 {
+  "about-link": "about-link",
   "aboutPage": "aboutPage",
   "language": "language",
+  "main-link": "main-link",
   "mainPage": "mainPage",
   "not-found-page": "not-found-page",
   "reload-page": "reload-page",
-  "throw error": "throw error",
+  "sidebar-button": "sidebar-button",
+  "throw error": "Выбросить ошибку",
   "unexpected-error": "unexpected-error"
 }

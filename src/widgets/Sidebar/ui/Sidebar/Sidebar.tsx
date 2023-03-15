@@ -3,7 +3,7 @@ import { PropsWithChildren, useState } from "react";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { Button } from "shared/ui/Button/Button";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -17,6 +17,7 @@ export function Sidebar(props: PropsWithChildren<SidebarProps>) {
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
+  const { t } = useTranslation();
 
   return (
     <div

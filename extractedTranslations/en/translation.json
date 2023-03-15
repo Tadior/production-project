@@ -1,9 +1,12 @@
 {
+  "about-link": "",
   "aboutPage": "aboutPage",
   "language": "language",
+  "main-link": "",
   "mainPage": "mainPage",
   "not-found-page": "not-found-page",
   "reload-page": "reload-page",
+  "sidebar-button": "",
   "throw error": "throw error",
   "unexpected-error": "unexpected-error"
 }

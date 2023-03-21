@@ -1,6 +1,8 @@
 {
   "about-link": "",
   "aboutPage": "aboutPage",
+  "decrement": "decrement",
+  "increment": "increment",
   "language": "language",
   "main-link": "",
   "mainPage": "mainPage",

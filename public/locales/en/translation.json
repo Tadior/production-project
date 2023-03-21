@@ -7,5 +7,7 @@
   "unexpected-error": "unexpected error",
   "reload-page": "reload page",
   "throw error": "Throw error",
-  "sidebar-button": "Toggle"
+  "sidebar-button": "Toggle",
+  "increment": "increment",
+  "decrement": "decrement"
 }

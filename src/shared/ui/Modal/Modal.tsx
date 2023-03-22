@@ -8,6 +8,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTheme } from "app/providers/ThemeProvider";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
 
@@ -22,6 +23,7 @@ const ANIMATION_DELAY = 300;
 
 export function Modal(props: PropsWithChildren<ModalProps>) {
   const { className, children, isOpen, onClose } = props;
+  const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();

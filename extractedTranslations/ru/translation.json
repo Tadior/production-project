@@ -1,13 +1,19 @@
 {
   "about-link": "about-link",
   "aboutPage": "aboutPage",
+  "decrement": "decrement",
+  "increment": "increment",
+  "input login": "input login",
+  "input password": "input password",
   "language": "language",
+  "login": "login",
   "main-link": "main-link",
   "mainPage": "mainPage",
   "not-found-page": "not-found-page",
   "reload-page": "reload-page",
   "short-language": "short-language",
   "sidebar-button": "sidebar-button",
+  "sign-in": "sign-in",
   "throw error": "Выбросить ошибку",
   "unexpected-error": "unexpected-error"
 }

@@ -7,5 +7,10 @@
   "unexpected-error": "Произошла непредвиденная ошибка",
   "reload-page": "Перезагрузить страницу",
   "throw error": "Выбросить ошибку",
-  "sidebar-button": "Переключить"
+  "sidebar-button": "Переключить",
+  "decrement": "Уменьшить",
+  "increment": "увеличить",
+  "login": "войти",
+  "input login": "Введите логин",
+  "input password": "Введите пароль"
 }

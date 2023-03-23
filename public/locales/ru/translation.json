@@ -9,5 +9,8 @@
   "throw error": "Выбросить ошибку",
   "sidebar-button": "Переключить",
   "decrement": "Уменьшить",
-  "increment": "увеличить"
+  "increment": "увеличить",
+  "login": "войти",
+  "input login": "Введите логин",
+  "input password": "Введите пароль"
 }

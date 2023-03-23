@@ -9,5 +9,8 @@
   "throw error": "Throw error",
   "sidebar-button": "Toggle",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "login": "login",
+  "input login": "input login",
+  "input password": "Input password"
 }

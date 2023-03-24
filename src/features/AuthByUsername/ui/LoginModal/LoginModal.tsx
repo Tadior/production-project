@@ -16,7 +16,7 @@ export function LoginModal(props: PropsWithChildren<LoginFormProps>) {
 
   return (
     <Modal
-      className={classNames(cls.LoginModal, {}, [className])}
+      className={classNames("", {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       lazy

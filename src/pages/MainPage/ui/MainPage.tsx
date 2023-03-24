@@ -13,7 +13,7 @@ const MainPage = () => {
   return (
     <div>
       <BugButton />
-      <Counter />
+      {/* <Counter /> */}
     </div>
   );
 };

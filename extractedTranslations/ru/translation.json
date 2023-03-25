@@ -1,6 +1,8 @@
 {
   "about-link": "about-link",
   "aboutPage": "aboutPage",
+  "auth-form": "auth-form",
+  "authorisation-form": "authorisation-form",
   "decrement": "decrement",
   "increment": "increment",
   "input login": "input login",
@@ -14,6 +16,13 @@
   "short-language": "short-language",
   "sidebar-button": "sidebar-button",
   "sign-in": "sign-in",
+  "sign-out": "sign-out",
   "throw error": "Выбросить ошибку",
-  "unexpected-error": "unexpected-error"
+  "unexpected-error": "unexpected-error",
+  "wrong login or password": "wrong login or password",
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль",
+  "Войти": "Войти",
+  "Вы ввели неверный логин или пароль": "Вы ввели неверный логин или пароль",
+  "Форма авторизации": "Форма авторизации"
 }

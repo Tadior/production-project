@@ -12,5 +12,7 @@
   "decrement": "decrement",
   "login": "login",
   "input login": "input login",
-  "input password": "Input password"
+  "input password": "Input password",
+  "auth-form": "Authorisation",
+  "wrong login or password": "You pass wrong login or password"
 }

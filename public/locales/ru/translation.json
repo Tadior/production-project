@@ -12,5 +12,7 @@
   "increment": "увеличить",
   "login": "войти",
   "input login": "Введите логин",
-  "input password": "Введите пароль"
+  "input password": "Введите пароль",
+  "auth-form": "Авторизация",
+  "wrong login or password": "Введен неверный логин или пароль"
 }

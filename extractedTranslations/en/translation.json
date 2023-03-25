@@ -1,6 +1,8 @@
 {
   "about-link": "",
   "aboutPage": "aboutPage",
+  "auth-form": "",
+  "authorisation-form": "",
   "decrement": "decrement",
   "increment": "increment",
   "input login": "input login",
@@ -14,6 +16,13 @@
   "short-language": "",
   "sidebar-button": "",
   "sign-in": "sign-in",
+  "sign-out": "sign-out",
   "throw error": "throw error",
-  "unexpected-error": "unexpected-error"
+  "unexpected-error": "unexpected-error",
+  "wrong login or password": "",
+  "Введите username": "",
+  "Введите пароль": "",
+  "Войти": "",
+  "Вы ввели неверный логин или пароль": "",
+  "Форма авторизации": ""
 }

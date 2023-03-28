@@ -1,19 +1,17 @@
 import { getUserAuthData, userActions } from "app/entities/User";
 import { LoginModal } from "features/AuthByUsername";
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Modal } from "shared/ui/Modal/Modal";
 import cls from "./Navbar.module.scss";
 
 interface navbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: navbarProps) => {
+export const Navbar = memo(({ className }: navbarProps) => {
   const { t } = useTranslation("navbar");
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
@@ -59,4 +57,4 @@ export const Navbar = ({ className }: navbarProps) => {
       )}
     </div>
   );
-};
+});

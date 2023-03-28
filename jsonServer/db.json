@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Dmitriy",
+    "lastName": "Zamulin",
+    "age": 25,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Samara",
+    "username": "admin",
+    "avatar": "https://overclockers.ru/st/r/800/-/legacy/blog/362268/333665_O.jpg"
+  }
 }

@@ -4,7 +4,7 @@ import {
   PropsWithChildren,
   ReactNode,
 } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 
 export enum ButtonTheme {
@@ -31,10 +31,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo((props: PropsWithChildren<ButtonProps>) => {
-  const { className, children, theme, square, disabled, size, ...otherProps } =
-    props;
+  const {
+    className,
+    children,
+    theme = ButtonTheme.OUTLINE,
+    square,
+    disabled,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.square]: square,
     [cls.disabled]: disabled,
   };

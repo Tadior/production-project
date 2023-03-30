@@ -8,7 +8,7 @@ import { userActions } from "./entities/User";
 import { AppRouter } from "./providers/router";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={classNames("app", {}, [])}>
+    <div className={classNames("app", {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

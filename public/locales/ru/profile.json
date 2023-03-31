@@ -1,5 +1,9 @@
 {
   "profile": "Профиль",
   "edit": "редактировать",
-  "input-lastname": "ваша фамилия"
+  "input-lastname": "ваша фамилия",
+  "profile-error-title": "ошибка загрузки профиля",
+  "profile-error-text": "перезагрузите страницу",
+  "discard": "отменить",
+  "save": "сохранить"
 }

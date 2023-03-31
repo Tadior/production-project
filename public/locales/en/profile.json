@@ -1,6 +1,10 @@
 {
   "profile": "Profile",
   "edit": "edit",
-  "input-firstname": "your firstname",
-  "input-lastname": "your lastname"
+  "input-firstname": "your first name",
+  "input-lastname": "your last name",
+  "profile-error-title": "profile error happened",
+  "profile-error-text": "try to reload the page",
+  "discard": "discard",
+  "save": "save"
 }

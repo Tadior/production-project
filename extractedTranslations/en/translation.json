@@ -1,4 +1,6 @@
 {
+  "Enter country": "",
+  "Enter currency": "Enter currency",
   "about-link": "",
   "aboutPage": "aboutPage",
   "auth-form": "",
@@ -34,6 +36,7 @@
   "sign-out": "sign-out",
   "throw error": "throw error",
   "unexpected-error": "unexpected-error",
+  "user-avatar": "user-avatar",
   "wrong login or password": "",
   "Введите username": "",
   "Введите пароль": "",

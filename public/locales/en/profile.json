@@ -6,5 +6,11 @@
   "profile-error-title": "profile error happened",
   "profile-error-text": "try to reload the page",
   "discard": "discard",
-  "save": "save"
+  "save": "save",
+  "server-error": "server error",
+  "incorrect-age": "incorrect age",
+  "incorrect-country": "incorrect country",
+  "incorrect-userData": "incorrect firstname or lastname",
+  "incorrect-city": "incorrect city",
+  "no-data": "data is empty"
 }

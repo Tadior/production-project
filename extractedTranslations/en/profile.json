@@ -1,5 +1,9 @@
 {
   "Enter currency": "",
+  "incorrect-age": "",
+  "incorrect-city": "",
+  "incorrect-country": "",
+  "incorrect-userData": "",
   "input-age": "",
   "input-avatar": "",
   "input-city": "",
@@ -8,7 +12,9 @@
   "input-firstname": "",
   "input-lastname": "",
   "input-username": "",
+  "no-data": "",
   "profile-error-text": "",
   "profile-error-title": "",
+  "server-error": "",
   "user-avatar": ""
 }

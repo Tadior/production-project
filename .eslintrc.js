@@ -65,10 +65,12 @@ module.exports = {
     ],
     "linebreak-style": "off",
     "no-undef": "off",
+    "jsx-props-no-spreading": "off",
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   overrides: [
     {

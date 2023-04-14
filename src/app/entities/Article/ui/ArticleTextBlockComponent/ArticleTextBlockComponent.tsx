@@ -1,22 +1,30 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import type { PropsWithChildren } from "react";
+import { memo } from "react";
+import { Text } from "shared/ui/Text/Text";
 import cls from "./ArticleTextBlockComponent.module.scss";
+import { ArticleTextBlock } from "../../model/types/article";
 
 interface ArticleTextBlockComponentProps {
   className?: string;
+  block: ArticleTextBlock
 }
 
-export function ArticleTextBlockComponent(
+export const ArticleTextBlockComponent = memo((
   props: PropsWithChildren<ArticleTextBlockComponentProps>
-) {
-  const { className } = props;
+) => {
+  const { className, block } = props;
 
   return (
     <div
       className={classNames(cls.ArticleTextBlockComponent, {}, [className])}
-      // eslint-disable-next-line i18next/no-literal-string
     >
-      ArticleTextBlockComponent
+      {block.title && (
+        <Text title={block.title} className={cls.title} />
+      )}
+      {block.paragraphs.map((paragraph, index) => (
+        <Text key={paragraph} text={paragraph} className={cls.paragraph}/>
+      ))}
     </div>
   );
-}
+})

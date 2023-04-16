@@ -2,22 +2,22 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
+    jest: true
   },
   extends: [
     "plugin:react/recommended",
     "airbnb",
     "plugin:i18next/recommended",
     "prettier",
-    "plugin:storybook/recommended",
+    "plugin:storybook/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: "latest",
-    sourceType: "module",
+    sourceType: "module"
   },
   plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
   rules: {
@@ -27,8 +27,8 @@ module.exports = {
     "react/jsx-filename-extension": [
       2,
       {
-        extensions: [".js", ".jsx", ".tsx"],
-      },
+        extensions: [".js", ".jsx", ".tsx"]
+      }
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
@@ -53,32 +53,32 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to"],
-      },
+        ignoreAttribute: ["data-testid", "to"]
+      }
     ],
     "max-len": [
       "error",
       {
         ignoreComments: true,
-        code: 130,
-      },
+        code: 140
+      }
     ],
     "linebreak-style": "off",
     "no-undef": "off",
-    "jsx-props-no-spreading": "off",
+    "jsx-props-no-spreading": "off"
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: true,
+    __PROJECT__: true
   },
   overrides: [
     {
       files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
       rules: {
         "i18next/no-literal-string": "off",
-        "max-len": "off",
-      },
-    },
-  ],
+        "max-len": "off"
+      }
+    }
+  ]
 };

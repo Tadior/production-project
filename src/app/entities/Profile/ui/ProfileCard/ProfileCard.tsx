@@ -1,18 +1,15 @@
-import { Mods, classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { PropsWithChildren } from "react";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Avatar } from "shared/ui/Avatar/Avatar";
-import { useSelector } from "react-redux";
-import { Select } from "shared/ui/Select/Select";
 import { Currency, CurrencySelect } from "app/entities/Currency";
 import { Country } from "app/entities/Country";
 import { CountrySelect } from "app/entities/Country/ui/CountrySelect/CountrySelect";
 import cls from "./ProfileCard.module.scss";
 import { Profile } from "../../model/types/profile";
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 
 interface ProfileCardProps {
   className?: string;
@@ -44,7 +41,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
     onChangeCountry,
     onChangeUsername,
     onChangeCurrency,
-    onChangeAvatar,
+    onChangeAvatar
   } = props;
   const { t } = useTranslation("profile");
 
@@ -72,7 +69,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
   }
 
   const mods: Mods = {
-    [cls.editing]: !readonly,
+    [cls.editing]: !readonly
   };
 
   return (

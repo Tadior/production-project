@@ -22,38 +22,38 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about",
-  [AppRoutes.PROFILE]: "/profile",
+  [AppRoutes.PROFILE]: "/profile/",
   [AppRoutes.ARTICLES]: "/articles",
   [AppRoutes.ARTICLE_DETAILS]: "/articles/",
-  [AppRoutes.NOTFOUND]: "*",
+  [AppRoutes.NOTFOUND]: "*"
 };
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,
-    element: <MainPage />,
+    element: <MainPage />
   },
   [AppRoutes.ABOUT]: {
     path: RoutePath.about,
-    element: <AboutPage />,
+    element: <AboutPage />
   },
   [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
-    authOnly: true,
+    authOnly: true
   },
   [AppRoutes.ARTICLES]: {
     path: RoutePath.articles,
     element: <ArticlesPage />,
-    authOnly: true,
+    authOnly: true
   },
   [AppRoutes.ARTICLE_DETAILS]: {
     path: `${RoutePath.article_details}:id`,
     element: <ArticleDetailsPage />,
-    authOnly: true,
+    authOnly: true
   },
   [AppRoutes.NOTFOUND]: {
     path: RoutePath.not_found,
-    element: <NotFoundPage />,
-  },
+    element: <NotFoundPage />
+  }
 };

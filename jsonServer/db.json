@@ -102,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Test comment",
+      "id": "WSwWOsZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Test moderator comment",
+      "id": "dvKBqPj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Hello world",
+      "id": "qL2dZUw"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Hello there",
+      "id": "ZCLfP7r"
     }
   ],
   "users": [
@@ -114,27 +138,52 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "moderator",
       "password": "123",
       "role": "USER",
-      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
     },
     {
       "id": "3",
-      "username": "user2",
+      "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Diman",
+      "lastName": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://www.meme-arsenal.com/memes/fbb8bbdeb6030ed5a5366244b88c330b.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "Alexander",
+      "lastName": "Zamulin",
+      "age": 65,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "moderator",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
+    },
+    {
+      "id": "3",
+      "firstName": "Viktor",
+      "lastName": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
+    }
+  ]
 }

@@ -1,13 +1,9 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { PropsWithChildren, useCallback, useEffect } from "react";
+import { PropsWithChildren, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
   fetchProfileData,
-  getProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
@@ -16,17 +12,19 @@ import {
   profileActions,
   ProfileCard,
   profileReducer,
-  ValidateProfileError,
+  ValidateProfileError
 } from "app/entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Currency } from "app/entities/Currency";
 import { Country } from "app/entities/Country";
-import { TextTheme, Text } from "shared/ui/Text/Text";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
-  profile: profileReducer,
+  profile: profileReducer
 };
 
 interface ProfilePageProps {
@@ -41,6 +39,7 @@ function ProfilePage(props: PropsWithChildren<ProfilePageProps>) {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+  const { id } = useParams<{ id: string }>();
   const validateErrors = useSelector(getProfileValidateErrors);
   const validateErrorsTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t("server-error"),
@@ -48,14 +47,13 @@ function ProfilePage(props: PropsWithChildren<ProfilePageProps>) {
     [ValidateProfileError.INCORRECT_COUNTRY]: t("incorrect-country"),
     [ValidateProfileError.INCORRECT_USER_DATA]: t("incorrect-userData"),
     [ValidateProfileError.INCORRECT_CITY]: t("incorrect-city"),
-    [ValidateProfileError.NO_DATA]: t("no-data"),
+    [ValidateProfileError.NO_DATA]: t("no-data")
   };
-
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstName = useCallback(
     (value?: string) => {

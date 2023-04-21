@@ -65,7 +65,8 @@ module.exports = {
     ],
     "linebreak-style": "off",
     "no-undef": "off",
-    "jsx-props-no-spreading": "off"
+    "jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off"
   },
   globals: {
     __IS_DEV__: true,

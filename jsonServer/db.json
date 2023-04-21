@@ -22,6 +22,7 @@
       "type": [
         "IT"
       ],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -126,6 +127,12 @@
       "userId": "2",
       "text": "Hello there",
       "id": "ZCLfP7r"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "DSfKbMx"
     }
   ],
   "users": [
@@ -168,7 +175,7 @@
       "firstName": "Alexander",
       "lastName": "Zamulin",
       "age": 65,
-      "currency": "USD",
+      "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
       "username": "moderator",

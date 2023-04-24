@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Page } from "shared/ui/Page/Page";
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -7,7 +8,7 @@ const MainPage = () => {
   const onChange = (value: string) => {
     setValue(value);
   };
-  return <div>{t("main-page")}</div>;
+  return <Page>{t("main-page")}</Page>;
 };
 
 export default MainPage;

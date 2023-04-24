@@ -11,6 +11,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from "features/addCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleCommentsError, getArticleCommentsIsLoading } from "../../model/selectors/comments";
@@ -49,15 +50,15 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t("Article is not found")}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t("back to list")}
         </Button>
@@ -65,7 +66,7 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
         <Text className={cls.commentTitle} title={t("Comments")} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 }

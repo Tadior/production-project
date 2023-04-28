@@ -9,10 +9,11 @@ import { DynamicModuleLoader, ReducersList } from "shared/lib/components/Dynamic
 import { useDispatch, useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { AddCommentForm } from "features/addCommentForm";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page/Page";
 import { getArticleRecommendationsIsLoading } from "pages/ArticleDetailsPage/model/selectors/recommendations";
+import {
+  ArticleDetailsPageHeader
+} from "pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { articleDetailsPageReducer } from "../../model/slices";
 import {
   fetchArticleRecommendations
@@ -48,10 +49,6 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
     dispatch(fetchArticleRecommendations());
@@ -64,14 +61,11 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
       </Page>
     );
   }
-  console.log(recommendations);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t("back to list")}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} className={cls.commentTitle} title={t("Recommendations")} />
         <ArticleList target="_blank" className={cls.recommendations} articles={recommendations}

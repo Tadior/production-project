@@ -1,8 +1,8 @@
 {
   "profile": "Profile",
   "edit": "edit",
-  "input-firstname": "your first name",
-  "input-lastname": "your last name",
+  "input-firstname": "First name",
+  "input-lastname": "Last name",
   "profile-error-title": "profile error happened",
   "profile-error-text": "try to reload the page",
   "discard": "discard",
@@ -12,5 +12,11 @@
   "incorrect-country": "incorrect country",
   "incorrect-userData": "incorrect firstname or lastname",
   "incorrect-city": "incorrect city",
-  "no-data": "data is empty"
+  "no-data": "data is empty",
+  "input-age": "Age",
+  "input-avatar": "Avatar",
+  "input-city": "City",
+  "input-username": "Nickname",
+  "Enter currency": "Currency",
+  "Enter country": "Country"
 }

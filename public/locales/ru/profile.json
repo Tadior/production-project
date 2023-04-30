@@ -1,7 +1,12 @@
 {
   "profile": "Профиль",
   "edit": "редактировать",
-  "input-lastname": "ваша фамилия",
+  "input-age": "Возраст",
+  "input-avatar": "Аватар",
+  "input-city": "Город",
+  "input-firstname": "Имя",
+  "input-lastname": "Фамилия",
+  "input-username": "Никнейм",
   "profile-error-title": "ошибка загрузки профиля",
   "profile-error-text": "перезагрузите страницу",
   "discard": "отменить",
@@ -11,5 +16,7 @@
   "incorrect-country": "некорректная страна",
   "incorrect-userData": "не правильно указано имя или фамилия",
   "incorrect-city": "неверно указан город",
-  "no-data": "отсутствуют данные"
+  "no-data": "отсутствуют данные",
+  "Enter currency": "Валюта",
+  "Enter country": "Страна"
 }

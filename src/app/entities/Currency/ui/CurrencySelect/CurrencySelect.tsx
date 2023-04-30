@@ -1,4 +1,4 @@
-import { PropsWithChildren, memo, useCallback } from "react";
+import { memo, PropsWithChildren, useCallback } from "react";
 import { Select } from "shared/ui/Select/Select";
 import { useTranslation } from "react-i18next";
 import { Currency } from "../../model/types/currency";
@@ -13,14 +13,14 @@ interface CurrencySelectProps {
 const options = [
   { value: Currency.RUB, content: Currency.RUB },
   { value: Currency.EUR, content: Currency.EUR },
-  { value: Currency.USD, content: Currency.USD },
+  { value: Currency.USD, content: Currency.USD }
 ];
 
 export const CurrencySelect = memo(
   (props: PropsWithChildren<CurrencySelectProps>) => {
     const { className, value, onChange, readonly } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
 
     const onChangeHandler = useCallback(
       (value: string) => {
@@ -31,7 +31,7 @@ export const CurrencySelect = memo(
 
     return (
       <Select
-        label={t("Enter country")}
+        label={t("Enter currency")}
         options={options}
         value={value}
         onChange={onChangeHandler}

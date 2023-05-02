@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
-import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
 import { getArticleDetailsData } from "app/entities/Article";
+import { getCanEditArticle } from "../../model/selectors/article";
 import cls from "./ArticleDetailsPageHeader.module.scss";
 
 interface ArticleDetailsPageHeaderProps {

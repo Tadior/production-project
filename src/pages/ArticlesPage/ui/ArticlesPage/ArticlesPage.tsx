@@ -6,8 +6,8 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Page } from "widgets/Page/Page";
-import { ArticlePageFilters } from "pages/ArticlesPage/ui/ArticlesPageFilters/ArticlePageFilters";
 import { useSearchParams } from "react-router-dom";
+import { ArticlePageFilters } from "../../ui/ArticlesPageFilters/ArticlePageFilters";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import {

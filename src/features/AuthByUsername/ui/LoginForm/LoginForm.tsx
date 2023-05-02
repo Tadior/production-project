@@ -1,23 +1,15 @@
 import { classNames } from "shared/lib/classNames/classNames";
 
-import { memo, PropsWithChildren, useCallback, useEffect } from "react";
+import { memo, PropsWithChildren, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector, useStore } from "react-redux";
-import {
-  loginActions,
-  loginReducer,
-} from "features/AuthByUsername/model/slice/loginSlice";
-import { getLoginState } from "features/AuthByUsername/model/selectors/getLoginState/getLoginState";
-import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername";
+import { useSelector } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { ReduxStoreWithManager } from "app/providers/StoreProvider";
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -30,7 +22,7 @@ export interface LoginFormProps {
 }
 
 const initialReducers: ReducersList = {
-  loginForm: loginReducer,
+  loginForm: loginReducer
 };
 
 const LoginForm = memo((props: PropsWithChildren<LoginFormProps>) => {

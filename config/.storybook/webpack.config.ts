@@ -9,6 +9,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     html: "",
     entry: "",
     src: path.resolve(__dirname, "..", "..", "src"),
+    locales: "",
+    buildLocales: ""
   };
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push(".ts", ".tsx");
@@ -24,7 +26,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module!.rules?.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: ["@svgr/webpack"]
   });
   config.module?.rules?.push(buildCssLoader(true));
 
@@ -32,7 +34,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify(""),
-      __PROJECT__: JSON.stringify("storybook"),
+      __PROJECT__: JSON.stringify("storybook")
     })
   );
 

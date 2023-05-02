@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "app/entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "app/entities/User";
-import cls from "./ProfilePageHeader.module.scss";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -37,23 +37,21 @@ export function ProfilePageHeader(
   }, [dispatch]);
 
   return (
-    <div className={cls.ProfilePageHeader}>
+    <HStack max justify="between" className="">
       <Text title={t("profile")} />
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <div>
           {readonly ? (
             <Button
               theme={ButtonTheme.OUTLINE}
-              className={cls.editBtn}
               onClick={onEdit}
             >
               {t("edit")}
             </Button>
           ) : (
-            <>
+            <HStack gap="8">
               <Button
                 theme={ButtonTheme.OUTLINE_RED}
-                className={cls.editBtn}
                 onClick={onCancelEdit}
               >
                 {t("discard")}
@@ -61,15 +59,14 @@ export function ProfilePageHeader(
 
               <Button
                 theme={ButtonTheme.OUTLINE}
-                className={cls.saveBtn}
                 onClick={onSave}
               >
                 {t("save")}
               </Button>
-            </>
+            </HStack>
           )}
         </div>
       )}
-    </div>
+    </HStack>
   );
 }

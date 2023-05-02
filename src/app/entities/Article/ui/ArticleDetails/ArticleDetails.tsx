@@ -15,6 +15,7 @@ import {
   ArticleImageBlockComponent
 } from "app/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "app/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { HStack, VStack } from "shared/ui/Stack";
 import cls from "./ArticleDetails.module.scss";
 import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
@@ -31,7 +32,7 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-  articleDetails: articleDetailsReducer,
+  articleDetails: articleDetailsReducer
 };
 
 export const ArticleDetails = memo(
@@ -46,18 +47,18 @@ export const ArticleDetails = memo(
     const renderBlock = useCallback((block: ArticleBlock) => {
       switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />;
       case ArticleBlockType.IMAGE:
         return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />;
       default:
         return null;
       }
-    }, [])
+    }, []);
 
     useEffect(() => {
-      if (__PROJECT__ !== 'storybook') {
+      if (__PROJECT__ !== "storybook") {
         dispatch(fetchArticleById(id));
       }
     }, [dispatch, id]);
@@ -84,29 +85,30 @@ export const ArticleDetails = memo(
     } else {
       content = (
         <>
-          <div className={cls.avatarWrapper}>
-            <Avatar size={200} src={article?.img} className={cls.avatar}/>
-          </div>
-
-          <Text className={cls.title} title={article?.title} text={article?.subtitle} size={TextSize.L} />
-          <div className={cls.articleInfo}>
-            <Icon className={cls.icon} Svg={EyeIcon} />
-            <Text text={String(article?.views)} />
-          </div>
-          <div className={cls.articleInfo}>
-            <Icon className={cls.icon} Svg={CalendarIcon} />
-            <Text text={article?.createdAt} />
-          </div>
+          <HStack justify="center" max className={cls.avatarWrapper}>
+            <Avatar size={200} src={article?.img} className={cls.avatar} />
+          </HStack>
+          <VStack gap="4" max>
+            <Text className={cls.title} title={article?.title} text={article?.subtitle} size={TextSize.L} />
+            <HStack gap="8" className={cls.articleInfo}>
+              <Icon className={cls.icon} Svg={EyeIcon} />
+              <Text text={String(article?.views)} />
+            </HStack>
+            <HStack className={cls.articleInfo}>
+              <Icon className={cls.icon} Svg={CalendarIcon} />
+              <Text text={article?.createdAt} />
+            </HStack>
+          </VStack>
           {article?.blocks.map(renderBlock)}
         </>
-      )
+      );
     }
 
     return (
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
           {content}
-        </div>
+        </VStack>
       </DynamicModuleLoader>
     );
   }

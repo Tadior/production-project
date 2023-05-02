@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { AddCommentForm } from "features/addCommentForm";
 import { Page } from "widgets/Page/Page";
+import { VStack } from "shared/ui/Stack";
 import { ArticleDetailsPageHeader } from "../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { articleDetailsPageReducer } from "../../model/slices";
@@ -63,14 +64,16 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t("Recommendations")} />
-        <ArticleList target="_blank" className={cls.recommendations} articles={recommendations}
-          isLoading={recommendationsIsLoading} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t("Comments")} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList comments={comments} isLoading={commentsIsLoading} />
+        <VStack gap="16" max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text size={TextSize.L} className={cls.commentTitle} title={t("Recommendations")} />
+          <ArticleList target="_blank" className={cls.recommendations} articles={recommendations}
+            isLoading={recommendationsIsLoading} />
+          <Text size={TextSize.L} className={cls.commentTitle} title={t("Comments")} />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList comments={comments} isLoading={commentsIsLoading} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

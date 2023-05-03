@@ -18,5 +18,6 @@
   "incorrect-city": "неверно указан город",
   "no-data": "отсутствуют данные",
   "Enter currency": "Валюта",
-  "Enter country": "Страна"
+  "Enter country": "Страна",
+  "Choose currency": "Выбирите валюту"
 }

@@ -1,7 +1,9 @@
 {
+  "": "",
   "App": "App",
   "Article error": "Article error",
   "Article is not found": "Article is not found",
+  "Articles error": "Articles error",
   "ArticlesPage": "ArticlesPage",
   "Choose currency": "Choose currency",
   "Comments": "Comments",
@@ -25,6 +27,7 @@
   "edit": "edit",
   "edit article": "edit article",
   "edit page by ID =": "edit page by ID =",
+  "error": "error",
   "highest": "highest",
   "incorrect-age": "incorrect-age",
   "incorrect-city": "incorrect-city",
@@ -67,5 +70,7 @@
   "title": "title",
   "unexpected-error": "unexpected-error",
   "views": "views",
-  "wrong login or password": "wrong login or password"
+  "wrong login or password": "wrong login or password",
+  "Комментарии": "",
+  "Статья не найдена": "Статья не найдена"
 }

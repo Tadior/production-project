@@ -1,7 +1,7 @@
 import { Country } from "app/entities/Country";
 import { Currency } from "app/entities/Currency";
 import { validateProfileData } from "./validateProfileData";
-import { ValidateProfileError } from "../../types/profile";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 const data = {
   username: "Dima",
@@ -10,7 +10,7 @@ const data = {
   lastName: "Zamulin",
   firstName: "Dmitriy",
   city: "Samara",
-  currency: Currency.RUB,
+  currency: Currency.RUB
 };
 
 describe("validateProfileData test", () => {
@@ -24,7 +24,7 @@ describe("validateProfileData test", () => {
     const result = validateProfileData({
       ...data,
       firstName: "",
-      lastName: "",
+      lastName: ""
     });
 
     expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
@@ -33,7 +33,7 @@ describe("validateProfileData test", () => {
   test("Incorrect age", async () => {
     const result = validateProfileData({
       ...data,
-      age: undefined,
+      age: undefined
     });
 
     expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
@@ -42,7 +42,7 @@ describe("validateProfileData test", () => {
   test("Incorrect country", async () => {
     const result = validateProfileData({
       ...data,
-      country: undefined,
+      country: undefined
     });
 
     expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
@@ -54,7 +54,7 @@ describe("validateProfileData test", () => {
       ValidateProfileError.INCORRECT_USER_DATA,
       ValidateProfileError.INCORRECT_AGE,
       ValidateProfileError.INCORRECT_COUNTRY,
-      ValidateProfileError.INCORRECT_CITY,
+      ValidateProfileError.INCORRECT_CITY
     ]);
   });
 });

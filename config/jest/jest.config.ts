@@ -9,7 +9,7 @@ export default {
   globals: {
     __IS_DEV__: true,
     __API__: "",
-    __PROJECT__: "jest",
+    __PROJECT__: "jest"
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -80,8 +80,17 @@ export default {
   moduleNameMapper: {
     "\\.(s?css)$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
-    axios: "axios/dist/node/axios.cjs",
+    axios: "axios/dist/node/axios.cjs"
   },
+  reporters: [
+    "default",
+    ["jest-html-reporters", {
+      publicPath: "<rootDir>/reports/unit",
+      filename: "report.html",
+      openReport: true,
+      inlineSource: true
+    }]
+  ],
   modulePaths: ["<rootDir>/src"],
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -147,7 +156,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"]
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [

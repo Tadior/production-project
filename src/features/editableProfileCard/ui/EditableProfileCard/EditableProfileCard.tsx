@@ -19,7 +19,6 @@ import { getProfileValidateErrors } from "../../model/selectors/getProfileValida
 import { ValidateProfileError } from "../..";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
-import cls from "./EditableProfileCard.module.scss";
 
 interface EditableProfileCardProps {
   className?: string;
@@ -113,7 +112,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       <VStack
         gap="8"
         max
-        className={classNames(cls.EditableProfileCard, {}, [className])}
+        className={classNames("", {}, [className])}
       >
         <EditableProfileCardHeader />
         {validateErrors?.length &&

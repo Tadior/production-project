@@ -67,5 +67,7 @@
   "sign-out": "sign-out",
   "sort by": "sort by",
   "title": "title",
-  "views": "views"
+  "views": "views",
+  "Admin panel": "Admin page",
+  "Forbidden page": "Forbidden page"
 }

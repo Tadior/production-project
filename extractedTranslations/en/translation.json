@@ -1,5 +1,6 @@
 {
   "": "",
+  "Admin panel": "Admin panel",
   "App": "App",
   "Article error": "Article error",
   "Article is not found": "Article is not found",
@@ -12,9 +13,11 @@
   "Create new article": "Create new article",
   "Enter country": "Enter country",
   "Enter currency": "Enter currency",
+  "Forbidden page": "Forbidden page",
   "Input your comment": "Input your comment",
   "Recommendations": "Recommendations",
   "aboutPage": "aboutPage",
+  "adminka": "adminka",
   "all": "all",
   "articles is not found": "",
   "auth-form": "auth-form",

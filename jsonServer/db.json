@@ -590,21 +590,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cs12.pikabu.ru/post_img/2021/11/20/0/163735713124736751.jpg"
     },
     {
       "id": "2",
-      "username": "moderator",
+      "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
     },
     {
       "id": "3",
-      "username": "user",
+      "username": "manager",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
     }
   ],

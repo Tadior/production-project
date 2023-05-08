@@ -1,13 +1,21 @@
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
 import { ThemeProvider } from "app/providers/ThemeProvider";
-import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "shared/config/i18n/i18n";
 import { StoreProvider } from "app/providers/StoreProvider";
+import { createRoot } from "react-dom/client";
 import App from "./app/App";
 import "app/styles/index.scss";
 
-render(
+const container = document.getElementById("root");
+
+if (!container) {
+  throw new Error("Container is`n found");
+}
+
+const root = createRoot(container);
+
+root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBoundary>
@@ -16,7 +24,5 @@ render(
         </ThemeProvider>
       </ErrorBoundary>
     </StoreProvider>
-  </BrowserRouter>,
-
-  document.getElementById("root")
+  </BrowserRouter>
 );

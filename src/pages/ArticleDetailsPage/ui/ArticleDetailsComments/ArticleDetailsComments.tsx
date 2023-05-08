@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo, useCallback } from "react";
+import { memo, Suspense, useCallback } from "react";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -14,7 +14,7 @@ import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -34,9 +34,12 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
   return (
 
-    <VStack gap="16" className={classNames("", {}, [className])}>
+    <VStack gap="16" max className={classNames("", {}, [className])}>
       <Text size={TextSize.L} title={t("Comments")} />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<div>...</div>}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
+
       <CommentList comments={comments} isLoading={commentsIsLoading} />
     </VStack>
 

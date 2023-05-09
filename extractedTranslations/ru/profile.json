@@ -1,0 +1,18 @@
+{
+  "Choose currency": "Choose currency",
+  "Enter country": "Enter country",
+  "incorrect-age": "incorrect-age",
+  "incorrect-city": "incorrect-city",
+  "incorrect-country": "incorrect-country",
+  "incorrect-userData": "incorrect-userData",
+  "input-age": "input-age",
+  "input-avatar": "input-avatar",
+  "input-city": "input-city",
+  "input-firstname": "input-firstname",
+  "input-lastname": "input-lastname",
+  "input-username": "input-username",
+  "no-data": "no-data",
+  "profile-error-text": "profile-error-text",
+  "profile-error-title": "profile-error-title",
+  "server-error": "server-error"
+}

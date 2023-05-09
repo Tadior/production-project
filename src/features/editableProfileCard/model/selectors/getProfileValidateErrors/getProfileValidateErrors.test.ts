@@ -1,6 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
+import { ValidateProfileError } from "../../consts/consts";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
-import { ValidateProfileError } from "../../types/editableProfileCardSchema";
+
 
 const errors = [
   ValidateProfileError.INCORRECT_AGE,

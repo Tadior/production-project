@@ -5,7 +5,8 @@ import { Text, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { PAGE_ID } from "widgets/Page/Page";
-import { Article, ArticleView } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/ArticleViewConst";
+import { Article } from "../../model/types/article";
 import cls from "./ArticleList.module.scss";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 

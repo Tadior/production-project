@@ -1,15 +1,16 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ArticleBlockType, ArticleType } from "app/entities/Article/model/types/article";
+import { ArticleBlockType } from "../../model/consts/ArticleBlockTypeConst";
+import { ArticleType } from "../../model/consts/ArticleTypeConst";
 import { ArticleDetails } from "./ArticleDetails";
 
 export default {
   title: "entities/ArticleDetails",
   component: ArticleDetails,
   argTypes: {
-    backgroundColor: { control: "color" },
-  },
+    backgroundColor: { control: "color" }
+  }
 } as ComponentMeta<typeof ArticleDetails>;
 
 const Template: ComponentStory<typeof ArticleDetails> = (args) => (
@@ -84,29 +85,29 @@ const article = {
       ]
     }
   ]
-}
+};
 
 export const Normal = Template.bind({});
-Normal.args = {}
+Normal.args = {};
 Normal.decorators = [StoreDecorator({
   articleDetails: {
     data: article
   }
-})]
+})];
 
 export const Loading = Template.bind({});
-Loading.args = {}
+Loading.args = {};
 Loading.decorators = [StoreDecorator({
   articleDetails: {
     isLoading: true
   }
-})]
+})];
 
 export const Error = Template.bind({});
-Error.args = {}
+Error.args = {};
 Error.decorators = [StoreDecorator({
   articleDetails: {
-    error: 'Some error'
+    error: "Some error"
   }
-})]
+})];
 

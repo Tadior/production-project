@@ -16,6 +16,7 @@ import {
 } from "app/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "app/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlockType } from "../../model/consts/ArticleBlockTypeConst";
 import cls from "./ArticleDetails.module.scss";
 import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
@@ -24,7 +25,7 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading
 } from "../../model/selectors/articleDetails";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleBlock } from "../../model/types/article";
 
 interface ArticleDetailsProps {
   className?: string;

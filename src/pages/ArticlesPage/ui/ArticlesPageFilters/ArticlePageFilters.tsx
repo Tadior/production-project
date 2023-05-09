@@ -9,7 +9,7 @@ import { Input } from "shared/ui/Input/Input";
 import { ArticleSortSelector } from "app/entities/Article/ui/ArticleSortSelector/ArticleSortSelector";
 import { SortOrder } from "shared/types";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { ArticleType } from "app/entities/Article/model/types/article";
+import { ArticleType } from "app/entities/Article/model/consts/ArticleTypeConst";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
   getArticlesPageOrder,

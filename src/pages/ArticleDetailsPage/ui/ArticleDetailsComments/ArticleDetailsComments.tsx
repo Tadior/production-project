@@ -7,6 +7,7 @@ import { VStack } from "shared/ui/Stack";
 import AddCommentForm from "features/addCommentForm/ui/AddCommentForm/AddCommentForm";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { CommentList } from "app/entities/Comment";
+import { Loader } from "shared/ui/Loader/Loader";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";
@@ -36,7 +37,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     <VStack gap="16" max className={classNames("", {}, [className])}>
       <Text size={TextSize.L} title={t("Comments")} />
-      <Suspense fallback={<div>...</div>}>
+      <Suspense fallback={<Loader />}>
         <AddCommentForm onSendComment={onSendComment} />
       </Suspense>
 

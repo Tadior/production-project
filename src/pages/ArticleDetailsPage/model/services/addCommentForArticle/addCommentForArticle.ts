@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getUserAuthData } from "app/entities/User";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { getArticleDetailsData } from "app/entities/Article/model/selectors/articleDetails";
-import { Comment } from "app/entities/Comment";
+import { getUserAuthData } from "@/app/entities/User";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { getArticleDetailsData } from "@/app/entities/Article/model/selectors/articleDetails";
+import { Comment } from "@/app/entities/Comment";
 import { fetchCommentsByArticleId } from "../../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 export const addCommentForArticle = createAsyncThunk<

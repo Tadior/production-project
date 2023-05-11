@@ -1,6 +1,6 @@
-import { Country } from "app/entities/Country";
-import { Currency } from "app/entities/Currency";
-import { StateSchema } from "app/providers/StoreProvider";
+import { Country } from "@/app/entities/Country";
+import { Currency } from "@/app/entities/Currency";
+import { StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileForm } from "./getProfileForm";
 
 const data = {

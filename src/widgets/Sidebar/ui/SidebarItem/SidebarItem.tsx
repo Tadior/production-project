@@ -1,9 +1,9 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { memo, PropsWithChildren } from "react";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { getUserAuthData } from "app/entities/User";
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { getUserAuthData } from "@/app/entities/User";
 import { SidebarItemType } from "../../model/types/sidebar";
 import cls from "./SidebarItem.module.scss";
 

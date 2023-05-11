@@ -1,5 +1,5 @@
-import { Country } from "app/entities/Country";
-import { Currency } from "app/entities/Currency";
+import { Country } from "@/app/entities/Country";
+import { Currency } from "@/app/entities/Currency";
 
 export interface Profile {
   id?: string;

@@ -69,5 +69,8 @@
   "title": "title",
   "views": "views",
   "Admin panel": "Admin page",
-  "Forbidden page": "Forbidden page"
+  "Forbidden page": "Forbidden page",
+  "close review": "close",
+  "send review": "send",
+  "your review": "your review"
 }

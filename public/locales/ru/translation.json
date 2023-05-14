@@ -59,5 +59,8 @@
   "Admin panel": "Страница администратора",
   "close review": "закрыть",
   "send review": "отправить",
-  "your review": "ваш отзыв"
+  "your review": "ваш отзыв",
+  "review article": "оцените статью",
+  "review article feedback": "Оставьте отзыв",
+  "article review thanks": "Спасибо за оценку"
 }

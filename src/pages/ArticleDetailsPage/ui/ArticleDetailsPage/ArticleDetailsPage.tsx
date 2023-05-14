@@ -11,6 +11,7 @@ import { ArticleDetailsPageHeader } from "../../ui/ArticleDetailsPageHeader/Arti
 import { articleDetailsPageReducer } from "../../model/slices";
 import cls from "./ArticleDetailsPage.module.scss";
 import { ArticleDetailsComments } from "../../ui/ArticleDetailsComments/ArticleDetailsComments";
+import { ArticleRating } from "@/features/articleRating";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -25,12 +26,17 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
   const { t } = useTranslation("article-details");
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

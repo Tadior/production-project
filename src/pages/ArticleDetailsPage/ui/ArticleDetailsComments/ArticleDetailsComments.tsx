@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Text, TextSize } from "@/shared/ui/Text/Text";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { VStack } from "@/shared/ui/Stack";
-import AddCommentForm from "@/features/addCommentForm/ui/AddCommentForm/AddCommentForm";
+import { AddCommentForm } from "@/features/addCommentForm";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { CommentList } from "@/app/entities/Comment";
 import { Loader } from "@/shared/ui/Loader/Loader";

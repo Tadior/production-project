@@ -78,7 +78,8 @@ module.exports = {
     "no-undef": "off",
     "jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
-    "fsd-path-checker-by-tadior/path-checker": "error"
+    "fsd-path-checker-by-tadior/path-checker": ["error", { alias: "@" }],
+    "fsd-path-checker-by-tadior/public-api-imports": ["error", { alias: "@" }]
   },
   globals: {
     __IS_DEV__: true,

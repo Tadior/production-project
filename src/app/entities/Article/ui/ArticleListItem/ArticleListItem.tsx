@@ -9,12 +9,12 @@ import { useHover } from "@/shared/lib/hooks/useHover/useHover";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { ArticleBlockType } from "../../model/consts/ArticleBlockTypeConst";
 import { ArticleView } from "../../model/consts/ArticleViewConst";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
 import { Article, ArticleTextBlock } from "../../model/types/article";
+import { RoutePath } from "@/shared/const/router";
 
 interface ArticleListItemProps {
   className?: string;

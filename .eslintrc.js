@@ -79,7 +79,10 @@ module.exports = {
     "jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
     "fsd-path-checker-by-tadior/path-checker": ["error", { alias: "@" }],
-    "fsd-path-checker-by-tadior/public-api-imports": ["error", { alias: "@" }]
+    "fsd-path-checker-by-tadior/public-api-imports": ["error", {
+      alias: "@",
+      testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
+    }]
   },
   globals: {
     __IS_DEV__: true,

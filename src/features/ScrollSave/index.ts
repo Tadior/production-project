@@ -1,4 +1,4 @@
-export { scrollSaveReducer } from "./slices/scrollSaveSlice";
+export { scrollSaveReducer, scrollSaveActions } from "./slices/scrollSaveSlice";
 
 export type { ScrollSchema, ScrollSaveSchema } from "./types/ScrollSaveSchema";
 

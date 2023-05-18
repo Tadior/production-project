@@ -2,8 +2,8 @@ import { memo } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ArticleList } from "@/app/entities/Article";
-import { Text } from "@/shared/ui/Text/Text";
+import { ArticleList } from "@/entities/Article";
+import { Text } from "@/shared/ui/Text";
 import { getArticles } from "../../model/slices/articlesPageSlice";
 import {
   getArticlesPageError,

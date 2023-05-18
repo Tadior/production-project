@@ -623,6 +623,12 @@
       "userId": "1",
       "text": "new comment",
       "id": "zEac9Bm"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "hello",
+      "id": "rhbBLNN"
     }
   ],
   "users": [

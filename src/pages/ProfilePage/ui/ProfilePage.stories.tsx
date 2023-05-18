@@ -1,20 +1,20 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Theme } from "@/app/providers/ThemeProvider";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import avatar from "@/shared/assets/test/storybook.jpg";
-import { Country } from "@/app/entities/Country";
-import { Currency } from "@/app/entities/Currency";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 import ProfilePage from "./ProfilePage";
+import { Theme } from "@/shared/const/theme";
 
 export default {
   title: "pages/ProfilePage",
   component: ProfilePage,
   argTypes: {
-    backgroundColor: { control: "color" },
-  },
+    backgroundColor: { control: "color" }
+  }
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
@@ -34,10 +34,10 @@ Light.decorators = [
         firstName: "Dmitriy",
         city: "Samara",
         currency: Currency.RUB,
-        avatar,
-      },
-    },
-  }),
+        avatar
+      }
+    }
+  })
 ];
 
 export const Dark = Template.bind({});
@@ -54,8 +54,8 @@ Dark.decorators = [
         firstName: "Dmitriy",
         city: "Samara",
         currency: Currency.RUB,
-        avatar,
-      },
-    },
-  }),
+        avatar
+      }
+    }
+  })
 ];

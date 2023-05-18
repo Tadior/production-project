@@ -3,9 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
 
 import { $api } from "@/shared/api/api";
-import { Profile } from "@/app/entities/Profile";
-import { Currency } from "@/app/entities/Currency";
-import { Country } from "@/app/entities/Country";
+import { Profile } from "@/entities/Profile";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
 import { EditableProfileCard } from "./EditableProfileCard";
 import { profileReducer } from "../../model/slice/profileSlice";
 

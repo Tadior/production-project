@@ -1,8 +1,8 @@
 import { addDecorator } from "@storybook/react";
-import { Theme } from "app/providers/ThemeProvider";
-import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator.ts";
-import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator.tsx";
-import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator.tsx";
+import { Theme } from "@/shared/const/theme";
+import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
+import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { SuspenseDecorator } from "../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
 
 export const parameters = {

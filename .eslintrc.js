@@ -19,16 +19,20 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module"
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "fsd-path-checker-by-tadior"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "ulbi-tv-plugin"
+  ],
   rules: {
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
     indent: [2, 2],
     "react/jsx-filename-extension": [
       2,
-      {
-        extensions: [".js", ".jsx", ".tsx"]
-      }
+      { extensions: [".js", ".jsx", ".tsx"] }
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
@@ -42,12 +46,6 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
     "no-tabs": 0,
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "no-param-reassign": "off",
     semi: "off",
     "i18next/no-literal-string": [
       "error",
@@ -61,28 +59,36 @@ module.exports = {
           "target",
           "justify",
           "align",
+          "border",
           "direction",
-          "gap",
-          "border"
+          "gap"
         ]
       }
     ],
-    "max-len": [
+    "max-len": ["error", { ignoreComments: true, code: 140 }],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies,
+    "no-param-reassign": "off",
+    "no-undef": "off",
+    "react/no-array-index-key": "off",
+    "arrow-body-style": "off",
+    "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
+    "ulbi-tv-plugin/layer-imports": [
       "error",
       {
-        ignoreComments: true,
-        code: 140
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"]
       }
     ],
-    "linebreak-style": "off",
-    "no-undef": "off",
-    "jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off",
-    "fsd-path-checker-by-tadior/path-checker": ["error", { alias: "@" }],
-    "fsd-path-checker-by-tadior/public-api-imports": ["error", {
-      alias: "@",
-      testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
-    }]
+    "ulbi-tv-plugin/public-api-imports": [
+      "error",
+      {
+        alias: "@",
+        testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"]
+      }
+    ]
   },
   globals: {
     __IS_DEV__: true,

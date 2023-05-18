@@ -1,5 +1,5 @@
-import { Country } from "@/app/entities/Country";
-import { Currency } from "@/app/entities/Currency";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileData } from "./getProfileData";
 
@@ -10,15 +10,15 @@ const data = {
   lastName: "Zamulin",
   firstName: "Dmitriy",
   city: "Samara",
-  currency: Currency.RUB,
+  currency: Currency.RUB
 };
 
 describe("get profile data test", () => {
   test("get data", () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
-        data,
-      },
+        data
+      }
     };
     expect(getProfileData(state as StateSchema)).toEqual(data);
   });

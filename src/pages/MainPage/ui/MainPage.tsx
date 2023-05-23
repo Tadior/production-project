@@ -8,7 +8,7 @@ const MainPage = () => {
   const onChange = (value: string) => {
     setValue(value);
   };
-  return <Page>{t("main-page")}</Page>;
+  return <Page data-testid="MainPage">{t("main-page")}</Page>;
 };
 
 export default MainPage;

@@ -7,7 +7,7 @@ function AdminPanelPage() {
   const { t } = useTranslation();
 
   return (
-    <Page className={classNames("", {}, [])}>
+    <Page data-testid="AdminPanelPage" className={classNames("", {}, [])}>
       {t("Admin panel")}
     </Page>
   );

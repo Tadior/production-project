@@ -7,7 +7,7 @@ function ForbiddenPage() {
   const { t } = useTranslation();
 
   return (
-    <Page className={classNames("", {}, [])}>
+    <Page data-testid="ForbiddenPage" className={classNames("", {}, [])}>
       {t("Forbidden page")}
     </Page>
   );

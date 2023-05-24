@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Button } from "@/shared/ui/Button";
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Button } from '@/shared/ui/Button';
 
 // Компонент дя тестирования
 export function BugButton() {
@@ -18,7 +18,7 @@ export function BugButton() {
 
   return (
     <Button onClick={onThrow} className="bug-button">
-      {t("throw error")}
+      {t('throw error')}
     </Button>
   );
 }

@@ -1,8 +1,8 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getProfileIsLoading } from "./getProfileIsLoading";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileIsLoading } from './getProfileIsLoading';
 
-describe("get profile data test", () => {
-  test("get isLoading", () => {
+describe('get profile data test', () => {
+  test('get isLoading', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         isLoading: true,
@@ -10,7 +10,7 @@ describe("get profile data test", () => {
     };
     expect(getProfileIsLoading(state as StateSchema)).toBe(true);
   });
-  test("if state is undefined", () => {
+  test('if state is undefined', () => {
     const state = {};
     expect(getProfileIsLoading(state as StateSchema)).toBe(undefined);
   });

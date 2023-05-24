@@ -1,75 +1,75 @@
-import { screen } from "@testing-library/react";
-import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
-import AppRouter from "./AppRouter";
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from "@/shared/const/router";
-import { UserRole } from "@/entities/User";
+import { screen } from '@testing-library/react';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import AppRouter from './AppRouter';
+import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { UserRole } from '@/entities/User';
 
-describe("app/router/AppRouter", () => {
-  test("Page render", async () => {
+describe('app/router/AppRouter', () => {
+  test('Page render', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteAbout()
+      route: getRouteAbout(),
     });
-    const page = await screen.findByTestId("aboutPage");
+    const page = await screen.findByTestId('aboutPage');
     expect(page).toBeInTheDocument();
   });
 
-  test("Wrong route", async () => {
+  test('Wrong route', async () => {
     componentRender(<AppRouter />, {
-      route: "/fbsbfsf"
+      route: '/fbsbfsf',
     });
-    const page = await screen.findByTestId("NotFoundPage");
+    const page = await screen.findByTestId('NotFoundPage');
     expect(page).toBeInTheDocument();
   });
 
-  test("redirect to main", async () => {
+  test('redirect to main', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteAdmin()
+      route: getRouteAdmin(),
     });
-    const page = await screen.findByTestId("MainPage");
+    const page = await screen.findByTestId('MainPage');
     expect(page).toBeInTheDocument();
   });
 
-  test("private pages", async () => {
+  test('private pages', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteProfile("1"),
+      route: getRouteProfile('1'),
       initialState: {
         user: {
           _inited: true,
-          authData: {}
-        }
-      }
+          authData: {},
+        },
+      },
     });
-    const page = await screen.findByTestId("ProfilePage");
+    const page = await screen.findByTestId('ProfilePage');
     expect(page).toBeInTheDocument();
   });
 
-  test("Access is unavailable, no role", async () => {
+  test('Access is unavailable, no role', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
         user: {
           _inited: true,
-          authData: {}
-        }
-      }
+          authData: {},
+        },
+      },
     });
-    const page = await screen.findByTestId("ForbiddenPage");
+    const page = await screen.findByTestId('ForbiddenPage');
     expect(page).toBeInTheDocument();
   });
 
-  test("Access is unavailable, no role", async () => {
+  test('Access is unavailable, no role', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
         user: {
           _inited: true,
           authData: {
-            roles: [UserRole.ADMIN]
-          }
-        }
-      }
+            roles: [UserRole.ADMIN],
+          },
+        },
+      },
     });
-    const page = await screen.findByTestId("AdminPanelPage");
+    const page = await screen.findByTestId('AdminPanelPage');
     expect(page).toBeInTheDocument();
   });
 });

@@ -1,15 +1,15 @@
-import { memo } from "react";
-import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ArticleList } from "@/entities/Article";
-import { Text } from "@/shared/ui/Text";
-import { getArticles } from "../../model/slices/articlesPageSlice";
+import { memo } from 'react';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleList } from '@/entities/Article';
+import { Text } from '@/shared/ui/Text';
+import { getArticles } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
-  getArticlesPageView
-} from "../../model/selectors/articlesPageSelectors";
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfiniteListProps {
   className?: string;
@@ -25,7 +25,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   const { t } = useTranslation();
 
   if (error) {
-    return <Text text={t("Articles error")} />;
+    return <Text text={t('Articles error')} />;
   }
 
   return (

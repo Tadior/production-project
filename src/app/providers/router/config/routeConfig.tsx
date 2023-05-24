@@ -1,13 +1,13 @@
-import { MainPage } from "@/pages/MainPage";
-import { AboutPage } from "@/pages/AboutPage";
-import { ProfilePage } from "@/pages/ProfilePage";
-import { ArticlesPage } from "@/pages/ArticlesPage";
-import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage";
-import { ArticleEditPage } from "@/pages/ArticleEditPage";
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
-import { UserRole } from "@/entities/User";
-import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import {
   AppRoutes,
   getRouteAbout,
@@ -18,56 +18,56 @@ import {
   getRouteArticles,
   getRouteForbidden,
   getRouteMain,
-  getRouteProfile
-} from "@/shared/const/router";
-import { AppRoutesProps } from "@/shared/types/router";
+  getRouteProfile,
+} from '@/shared/const/router';
+import { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
     path: getRouteMain(),
-    element: <MainPage />
+    element: <MainPage />,
   },
   [AppRoutes.ABOUT]: {
     path: getRouteAbout(),
-    element: <AboutPage />
+    element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: getRouteProfile(":id"),
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
-    authOnly: true
+    authOnly: true,
   },
   [AppRoutes.ARTICLES]: {
     path: getRouteArticles(),
     element: <ArticlesPage />,
-    authOnly: true
+    authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {
-    path: getRouteArticleDetails(":id"),
+    path: getRouteArticleDetails(':id'),
     element: <ArticleDetailsPage />,
-    authOnly: true
+    authOnly: true,
   },
   [AppRoutes.ARTICLE_CREATE]: {
     path: getRouteArticleNew(),
     element: <ArticleEditPage />,
-    authOnly: true
+    authOnly: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {
-    path: getRouteArticleEdit(":id"),
+    path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
-    authOnly: true
+    authOnly: true,
   },
   [AppRoutes.ADMIN_PANEL]: {
     path: getRouteAdmin(),
     element: <AdminPanelPage />,
     authOnly: true,
-    roles: [UserRole.MANAGER, UserRole.ADMIN]
+    roles: [UserRole.MANAGER, UserRole.ADMIN],
   },
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
-    element: <ForbiddenPage />
+    element: <ForbiddenPage />,
   },
   [AppRoutes.NOTFOUND]: {
-    path: "*",
-    element: <NotFoundPage />
-  }
+    path: '*',
+    element: <NotFoundPage />,
+  },
 };

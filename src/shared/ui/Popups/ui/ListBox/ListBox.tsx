@@ -1,12 +1,12 @@
-import { Fragment, ReactNode } from "react";
-import { Listbox as HListbox } from "@headlessui/react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { DropdownDirection } from "@/shared/types/ui";
-import { mapDirectionClasses } from "../../styles/consts";
-import { HStack } from "../../../Stack";
-import { Button } from "../../../Button/Button";
-import cls from "./ListBox.module.scss";
-import popupCls from "../../styles/popup.module.scss";
+import { Fragment, ReactNode } from 'react';
+import { Listbox as HListbox } from '@headlessui/react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
+import { mapDirectionClasses } from '../../styles/consts';
+import { HStack } from '../../../Stack';
+import { Button } from '../../../Button/Button';
+import cls from './ListBox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListboxItem {
   value: string,
@@ -33,8 +33,8 @@ export function ListBox(props: ListboxProps) {
     value,
     onChange,
     readonly,
-    direction = "bottom left",
-    label
+    direction = 'bottom left',
+    label,
   } = props;
 
   const optionsClasses = [mapDirectionClasses[direction]];
@@ -65,9 +65,10 @@ export function ListBox(props: ListboxProps) {
               {({ active, selected }) => (
                 <li className={classNames(cls.item, {
                   [popupCls.active]: active,
-                  [popupCls.disabled]: item.disabled
-                }, [])}>
-                  {selected && "!!!"}
+                  [popupCls.disabled]: item.disabled,
+                }, [])}
+                >
+                  {selected && '!!!'}
                   {item.content}
                 </li>
 

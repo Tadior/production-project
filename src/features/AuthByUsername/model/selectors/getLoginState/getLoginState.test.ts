@@ -1,13 +1,13 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getLoginState } from "./getLoginState";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getLoginState } from './getLoginState';
 
-describe("getLoginError", () => {
-  test("should return true", () => {
+describe('getLoginError', () => {
+  test('should return true', () => {
     const loginForm = {
-      password: "123",
-      username: "user",
+      password: '123',
+      username: 'user',
       isLoading: true,
-      error: "error",
+      error: 'error',
     };
     const state: DeepPartial<StateSchema> = {
       counter: {
@@ -15,15 +15,15 @@ describe("getLoginError", () => {
       },
       user: {
         authData: {
-          id: "red",
-          username: "red",
+          id: 'red',
+          username: 'red',
         },
       },
       loginForm,
     };
     expect(getLoginState(state as StateSchema)).toEqual(loginForm);
   });
-  test("should work with empty state", () => {
+  test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getLoginState(state as StateSchema)).toEqual(undefined);
   });

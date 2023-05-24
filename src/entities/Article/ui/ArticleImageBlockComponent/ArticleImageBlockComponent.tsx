@@ -1,9 +1,9 @@
-import type { PropsWithChildren } from "react";
-import { memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextAlign } from "@/shared/ui/Text";
-import cls from "./ArticleImageBlockComponent.module.scss";
-import { ArticleImageBlock } from "../../model/types/article";
+import type { PropsWithChildren } from 'react';
+import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign } from '@/shared/ui/Text';
+import cls from './ArticleImageBlockComponent.module.scss';
+import { ArticleImageBlock } from '../../model/types/article';
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -11,7 +11,7 @@ interface ArticleImageBlockComponentProps {
 }
 
 export const ArticleImageBlockComponent = memo((
-  props: PropsWithChildren<ArticleImageBlockComponentProps>
+  props: PropsWithChildren<ArticleImageBlockComponentProps>,
 ) => {
   const { className, block } = props;
 

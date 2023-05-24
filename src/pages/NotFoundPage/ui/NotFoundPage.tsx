@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./NotFoundPage.module.scss";
-import { Page } from "@/widgets/Page";
+import type { PropsWithChildren } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './NotFoundPage.module.scss';
+import { Page } from '@/widgets/Page';
 
 interface NotFoundPageProps {
   className?: string;
@@ -14,7 +14,7 @@ export function NotFoundPage(props: PropsWithChildren<NotFoundPageProps>) {
 
   return (
     <Page data-testid="NotFoundPage" className={classNames(cls.NotFoundPage, {}, [className])}>
-      {t("not-found-page")}
+      {t('not-found-page')}
     </Page>
   );
 }

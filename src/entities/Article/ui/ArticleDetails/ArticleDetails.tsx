@@ -1,31 +1,33 @@
-import { memo, PropsWithChildren, useCallback, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
-import { Skeleton } from "@/shared/ui/Sceleton";
-import { Avatar } from "@/shared/ui/Avatar";
-import EyeIcon from "@/shared/assets/icons/eye.svg";
-import CalendarIcon from "@/shared/assets/icons/calendar.svg";
-import { Icon } from "@/shared/ui/Icon";
+import {
+  memo, PropsWithChildren, useCallback, useEffect,
+} from 'react';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Sceleton';
+import { Avatar } from '@/shared/ui/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {
-  ArticleImageBlockComponent
+  ArticleImageBlockComponent,
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { ArticleBlockType } from "../../model/consts/ArticleBlockTypeConst";
-import cls from "./ArticleDetails.module.scss";
-import { articleDetailsReducer } from "../../model/slices/articleDetailsSlice";
-import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/ArticleBlockTypeConst';
+import cls from './ArticleDetails.module.scss';
+import { articleDetailsReducer } from '../../model/slices/articleDetailsSlice';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
-  getArticleDetailsIsLoading
-} from "../../model/selectors/articleDetails";
-import { ArticleBlock } from "../../model/types/article";
+  getArticleDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
+import { ArticleBlock } from '../../model/types/article';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -33,7 +35,7 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-  articleDetails: articleDetailsReducer
+  articleDetails: articleDetailsReducer,
 };
 
 export const ArticleDetails = memo(
@@ -43,7 +45,7 @@ export const ArticleDetails = memo(
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
-    const { t } = useTranslation("article-details");
+    const { t } = useTranslation('article-details');
 
     const renderBlock = useCallback((block: ArticleBlock) => {
       switch (block.type) {
@@ -59,7 +61,7 @@ export const ArticleDetails = memo(
     }, []);
 
     useEffect(() => {
-      if (__PROJECT__ !== "storybook") {
+      if (__PROJECT__ !== 'storybook') {
         dispatch(fetchArticleById(id));
       }
     }, [dispatch, id]);
@@ -82,7 +84,7 @@ export const ArticleDetails = memo(
         </>
       );
     } else if (error) {
-      content = <Text align={TextAlign.CENTER} title={t("Article error")} />;
+      content = <Text align={TextAlign.CENTER} title={t('Article error')} />;
     } else {
       content = (
         <>
@@ -112,5 +114,5 @@ export const ArticleDetails = memo(
         </VStack>
       </DynamicModuleLoader>
     );
-  }
+  },
 );

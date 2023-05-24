@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Currency } from "../../model/types/currency";
-import { CurrencySelect } from "./CurrencySelect";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Currency } from '../../model/types/currency';
+import { CurrencySelect } from './CurrencySelect';
 
 export default {
-  title: "entities/CurrencySelect",
+  title: 'entities/CurrencySelect',
   component: CurrencySelect,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof CurrencySelect>;
 

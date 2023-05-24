@@ -1,9 +1,9 @@
-import { PropsWithChildren, Suspense } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { PropsWithChildren, Suspense } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Modal } from "@/shared/ui/Modal";
-import { Loader } from "@/shared/ui/Loader";
-import { LoginFormAsync } from "../LoginForm/LoginForm.async";
+import { Modal } from '@/shared/ui/Modal';
+import { Loader } from '@/shared/ui/Loader';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface LoginFormProps {
   className?: string;
@@ -16,7 +16,7 @@ export function LoginModal(props: PropsWithChildren<LoginFormProps>) {
 
   return (
     <Modal
-      className={classNames("", {}, [className])}
+      className={classNames('', {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       lazy

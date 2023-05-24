@@ -1,16 +1,16 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { ErrorBoundary } from "@/app/providers/ErrorBoundary";
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import "@/shared/config/i18n/i18n";
-import { StoreProvider } from "@/app/providers/StoreProvider";
-import App from "./app/App";
-import "@/app/styles/index.scss";
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import '@/shared/config/i18n/i18n';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import App from './app/App';
+import '@/app/styles/index.scss';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 
 if (!container) {
-  throw new Error("Container is`n found");
+  throw new Error('Container is`n found');
 }
 
 const root = createRoot(container);
@@ -24,6 +24,6 @@ root.render(
         </ThemeProvider>
       </ErrorBoundary>
     </StoreProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );
-export { Theme } from "@/shared/const/theme";
+export { Theme } from '@/shared/const/theme';

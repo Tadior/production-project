@@ -1,12 +1,12 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextSize } from "@/shared/ui/Text";
-import { ArticleView } from "../../model/consts/ArticleViewConst";
-import { Article } from "../../model/types/article";
-import cls from "./ArticleList.module.scss";
-import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { Text, TextSize } from '@/shared/ui/Text';
+import { ArticleView } from '../../model/consts/ArticleViewConst';
+import { Article } from '../../model/types/article';
+import cls from './ArticleList.module.scss';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 
 interface ArticleListProps {
   className?: string;
@@ -22,7 +22,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleView.SMALL,
     isLoading,
     articles,
-    target
+    target,
   } = props;
   const { t } = useTranslation();
 
@@ -36,7 +36,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
 
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        <Text size={TextSize.L} title={t("articles is not found")} />
+        <Text size={TextSize.L} title={t('articles is not found')} />
       </div>
 
     );
@@ -45,7 +45,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 
-      {articles.map(item => (
+      {articles.map((item) => (
         <ArticleListItem
           article={item}
           view={view}

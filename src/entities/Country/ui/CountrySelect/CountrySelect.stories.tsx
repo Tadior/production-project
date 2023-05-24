@@ -1,13 +1,13 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { CountrySelect } from "./CountrySelect";
-import { Country } from "../../model/types/country";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { CountrySelect } from './CountrySelect';
+import { Country } from '../../model/types/country';
 
 export default {
-  title: "entities/CountrySelect",
+  title: 'entities/CountrySelect',
   component: CountrySelect,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof CountrySelect>;
 

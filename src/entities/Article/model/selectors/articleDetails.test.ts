@@ -1,11 +1,11 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from "./articleDetails";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
 
-describe("get profile data test", () => {
-  test("get data", () => {
+describe('get profile data test', () => {
+  test('get data', () => {
     const data = {
       id: '1',
-      title: 'title'
+      title: 'title',
     }
     const state: DeepPartial<StateSchema> = {
       articleDetails: {
@@ -14,24 +14,24 @@ describe("get profile data test", () => {
     };
     expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
   });
-  test("if error", () => {
+  test('if error', () => {
     const errorValue = 'Some error'
     const state = {
       articleDetails: {
         error: errorValue,
-      }
+      },
     };
     expect(getArticleDetailsError(state as StateSchema)).toEqual(errorValue);
   });
-  test("if isLoading true", () => {
+  test('if isLoading true', () => {
     const state = {
       articleDetails: {
         isLoading: true,
-      }
+      },
     };
     expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
   });
-  test("if isLoading empty", () => {
+  test('if isLoading empty', () => {
     const state = {};
     expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(false);
   });

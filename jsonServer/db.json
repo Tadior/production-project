@@ -658,6 +658,15 @@
         "MANAGER"
       ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU"
     }
   ],
   "profile": [

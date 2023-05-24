@@ -1,22 +1,22 @@
 export enum AppRoutes {
-  MAIN = "main",
-  ABOUT = "about",
-  NOTFOUND = "not_found",
-  PROFILE = "profile",
-  ARTICLES = "articles",
-  ARTICLE_DETAILS = "article_details",
-  ARTICLE_CREATE = "article_create",
-  ARTICLE_EDIT = "article_edit",
-  ADMIN_PANEL = "admin_panel",
-  FORBIDDEN = "forbidden",
+  MAIN = 'main',
+  ABOUT = 'about',
+  NOTFOUND = 'not_found',
+  PROFILE = 'profile',
+  ARTICLES = 'articles',
+  ARTICLE_DETAILS = 'article_details',
+  ARTICLE_CREATE = 'article_create',
+  ARTICLE_EDIT = 'article_edit',
+  ADMIN_PANEL = 'admin_panel',
+  FORBIDDEN = 'forbidden',
 }
 
-export const getRouteMain = () => "/";
-export const getRouteAbout = () => "/about";
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
 export const getRouteProfile = (id: string) => `/profile/${id}`;
-export const getRouteArticles = () => `/articles`;
+export const getRouteArticles = () => '/articles';
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
-export const getRouteArticleNew = () => `/articles/new`;
+export const getRouteArticleNew = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
-export const getRouteAdmin = () => `/admin`;
-export const getRouteForbidden = () => `/forbidden`;
+export const getRouteAdmin = () => '/admin';
+export const getRouteForbidden = () => '/forbidden';

@@ -1,7 +1,7 @@
-import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
-import { CreateSliceOptions, SliceCaseReducers } from "@reduxjs/toolkit/dist";
-import { useDispatch } from "react-redux";
-import { useMemo } from "react";
+import { bindActionCreators, createSlice } from '@reduxjs/toolkit';
+import { CreateSliceOptions, SliceCaseReducers } from '@reduxjs/toolkit/dist';
+import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 
 export function buildSlice<
   State,
@@ -19,6 +19,6 @@ export function buildSlice<
 
   return {
     ...slice,
-    useActions
+    useActions,
   };
 }

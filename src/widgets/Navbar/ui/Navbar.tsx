@@ -1,24 +1,24 @@
-import { memo, useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
-import { LoginModal } from "@/features/AuthByUsername";
-import { getUserAuthData } from "@/entities/User";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { HStack } from "@/shared/ui/Stack";
-import { NotificationButton } from "@/features/notificationButton";
-import { AvatarDropdown } from "@/features/avatarDropdown";
-import cls from "./Navbar.module.scss";
-import { getRouteArticleNew } from "@/shared/const/router";
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { LoginModal } from '@/features/AuthByUsername';
+import { getUserAuthData } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/notificationButton';
+import { AvatarDropdown } from '@/features/avatarDropdown';
+import cls from './Navbar.module.scss';
+import { getRouteArticleNew } from '@/shared/const/router';
 
 interface navbarProps {
   className?: string;
 }
 
 export const Navbar = memo(({ className }: navbarProps) => {
-  const { t } = useTranslation("navbar");
+  const { t } = useTranslation('navbar');
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
 
@@ -30,13 +30,12 @@ export const Navbar = memo(({ className }: navbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-
   if (authData) {
     return (
       <div className={classNames(cls.Navbar, {}, [className])}>
-        <Text className={cls.appName} title={t("App")} theme={TextTheme.INVERTED} />
+        <Text className={cls.appName} title={t('App')} theme={TextTheme.INVERTED} />
         <AppLink to={getRouteArticleNew()} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
-          {t("Create article")}
+          {t('Create article')}
         </AppLink>
         <HStack gap="16" className={cls.actions}>
           <NotificationButton />
@@ -54,7 +53,7 @@ export const Navbar = memo(({ className }: navbarProps) => {
         className={cls.links}
         onClick={onShowModal}
       >
-        {t("sign-in")}
+        {t('sign-in')}
       </Button>
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />

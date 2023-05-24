@@ -1,6 +1,6 @@
-import { User } from "@/entities/User";
-import { ArticleBlockType } from "../consts/ArticleBlockTypeConst";
-import { ArticleType } from "../consts/ArticleTypeConst";
+import { User } from '@/entities/User';
+import { ArticleBlockType } from '../consts/ArticleBlockTypeConst';
+import { ArticleType } from '../consts/ArticleTypeConst';
 
 export interface ArticleBlockBase {
   id: string;
@@ -40,4 +40,3 @@ export interface Article {
   type: ArticleType[];
   blocks: ArticleBlock[];
 }
-

@@ -1,18 +1,18 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Profile } from "@/entities/Profile";
-import { ProfileSchema } from "../types/editableProfileCardSchema";
-import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
-import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Profile } from '@/entities/Profile';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
+import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const initialState: ProfileSchema = {
   readonly: true,
   isLoading: false,
   error: undefined,
-  data: undefined
+  data: undefined,
 };
 
 export const profileSlice = createSlice({
-  name: "profile",
+  name: 'profile',
   initialState,
   reducers: {
     setReadonly: (state, action: PayloadAction<boolean>) => {
@@ -26,9 +26,9 @@ export const profileSlice = createSlice({
     updateProfile: (state, action: PayloadAction<Profile>) => {
       state.form = {
         ...state.form,
-        ...action.payload
+        ...action.payload,
       };
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -42,7 +42,7 @@ export const profileSlice = createSlice({
           state.isLoading = false;
           state.data = action.payload;
           state.form = action.payload;
-        }
+        },
       )
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false;
@@ -60,13 +60,13 @@ export const profileSlice = createSlice({
           state.form = action.payload;
           state.readonly = true;
           state.validateErrors = undefined;
-        }
+        },
       )
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
         state.validateErrors = action.payload;
       });
-  }
+  },
 });
 
 // Action creators are generated for each case reducer function

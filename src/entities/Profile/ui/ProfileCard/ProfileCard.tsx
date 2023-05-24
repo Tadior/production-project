@@ -1,16 +1,16 @@
-import { PropsWithChildren } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text";
-import { Input } from "@/shared/ui/Input";
-import { Loader } from "@/shared/ui/Loader";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Currency, CurrencySelect } from "@/entities/Currency";
-import { Country , CountrySelect } from "@/entities/Country";
+import { PropsWithChildren } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
 
-import { HStack, VStack } from "@/shared/ui/Stack";
-import cls from "./ProfileCard.module.scss";
-import { Profile } from "../../model/types/profile";
+import { HStack, VStack } from '@/shared/ui/Stack';
+import cls from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
   className?: string;
@@ -42,9 +42,9 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
     onChangeCountry,
     onChangeUsername,
     onChangeCurrency,
-    onChangeAvatar
+    onChangeAvatar,
   } = props;
-  const { t } = useTranslation("profile");
+  const { t } = useTranslation('profile');
 
   if (isLoading) {
     return (
@@ -62,8 +62,8 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
-          title={t("profile-error-title")}
-          text={t("profile-error-text")}
+          title={t('profile-error-title')}
+          text={t('profile-error-text')}
           align={TextAlign.CENTER}
         />
       </HStack>
@@ -71,7 +71,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
   }
 
   const mods: Mods = {
-    [cls.editing]: !readonly
+    [cls.editing]: !readonly,
   };
 
   return (
@@ -84,7 +84,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
 
       <Input
         value={data?.firstName}
-        placeholder={t("input-firstname")}
+        placeholder={t('input-firstname')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeFirstName}
@@ -92,7 +92,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       />
       <Input
         value={data?.lastName}
-        placeholder={t("input-lastname")}
+        placeholder={t('input-lastname')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeLastName}
@@ -100,7 +100,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       />
       <Input
         value={data?.age}
-        placeholder={t("input-age")}
+        placeholder={t('input-age')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeAge}
@@ -108,7 +108,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       />
       <Input
         value={data?.city}
-        placeholder={t("input-city")}
+        placeholder={t('input-city')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeCity}
@@ -116,7 +116,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       />
       <Input
         value={data?.username}
-        placeholder={t("input-username")}
+        placeholder={t('input-username')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeUsername}
@@ -124,7 +124,7 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
       />
       <Input
         value={data?.avatar}
-        placeholder={t("input-avatar")}
+        placeholder={t('input-avatar')}
         className={cls.input}
         readOnly={readonly}
         onChange={onChangeAvatar}

@@ -1,17 +1,17 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Text } from "../Text/Text";
-import { Card } from "./Card";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Text } from '../Text/Text';
+import { Card } from './Card';
 
 export default {
-  title: "shared/Card",
+  title: 'shared/Card',
   component: Card,
   argTypes: {
-    backgroundColor: { control: "color" }
+    backgroundColor: { control: 'color' },
   },
   args: {
-    to: "/"
-  }
+    to: '/',
+  },
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => (
@@ -20,5 +20,5 @@ const Template: ComponentStory<typeof Card> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {
-  children: <Text title="test" text="Lorem" />
+  children: <Text title="test" text="Lorem" />,
 };

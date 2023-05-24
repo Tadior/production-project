@@ -1,18 +1,18 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ScrollSaveSchema } from "../types/ScrollSaveSchema";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ScrollSaveSchema } from '../types/ScrollSaveSchema';
 
 const initialState: ScrollSaveSchema = {
-  scroll: {}
+  scroll: {},
 };
 
 export const scrollSaveSlice = createSlice({
-  name: "scrollSave",
+  name: 'scrollSave',
   initialState,
   reducers: {
     setScrollPosition: (state, { payload }: PayloadAction<{ path: string, position: number }>) => {
       state.scroll[payload.path] = payload.position;
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function

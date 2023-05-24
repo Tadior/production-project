@@ -1,22 +1,22 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text } from "@/shared/ui/Text";
-import { Icon } from "@/shared/ui/Icon";
-import EyeIcon from "@/shared/assets/icons/eye.svg";
-import { Card } from "@/shared/ui/Card";
-import { useHover } from "@/shared/lib/hooks/useHover/useHover";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { AppLink } from "@/shared/ui/AppLink";
-import { ArticleBlockType } from "../../model/consts/ArticleBlockTypeConst";
-import { ArticleView } from "../../model/consts/ArticleViewConst";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import cls from "./ArticleListItem.module.scss";
-import { Article, ArticleTextBlock } from "../../model/types/article";
-import { getRouteArticleDetails } from "@/shared/const/router";
-import { AppImage } from "@/shared/ui/AppImage/AppImage";
-import { Skeleton } from "@/shared/ui/Sceleton";
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
+import { Icon } from '@/shared/ui/Icon';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { Card } from '@/shared/ui/Card';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { AppLink } from '@/shared/ui/AppLink';
+import { ArticleBlockType } from '../../model/consts/ArticleBlockTypeConst';
+import { ArticleView } from '../../model/consts/ArticleViewConst';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import cls from './ArticleListItem.module.scss';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage/AppImage';
+import { Skeleton } from '@/shared/ui/Sceleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -26,10 +26,12 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target } = props;
+  const {
+    className, article, view, target,
+  } = props;
   const [isHover, bindHover] = useHover();
   const { t } = useTranslation();
-  const types = <Text text={article.type.join(", ")} className={cls.types} />;
+  const types = <Text text={article.type.join(', ')} className={cls.types} />;
   const views = (
     <>
       <Text text={String(article.views)} className={cls.views} />
@@ -38,7 +40,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
-      (block => block.type === ArticleBlockType.TEXT)
+      ((block) => block.type === ArticleBlockType.TEXT),
     ) as ArticleTextBlock;
     return (
 
@@ -63,7 +65,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           <div className={cls.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               <Button theme={ButtonTheme.OUTLINE}>
-                {t("read article")}
+                {t('read article')}
               </Button>
             </AppLink>
             {views}
@@ -77,7 +79,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     <AppLink
       target={target}
-      to={getRouteArticleDetails(article.id)} {...bindHover}
+      to={getRouteArticleDetails(article.id)}
+      {...bindHover}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card className={cls.card}>
@@ -86,7 +89,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             fallback={<Skeleton width={200} height={200} />}
             src={article.img}
             className={cls.img}
-            alt={article.title} />
+            alt={article.title}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>

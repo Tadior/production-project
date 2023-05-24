@@ -1,34 +1,34 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Country } from "@/entities/Country";
-import { Currency } from "@/entities/Currency";
-import { fetchProfileData } from "./fetchProfileData";
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { fetchProfileData } from './fetchProfileData';
 
 const data = {
-  username: "Dima",
+  username: 'Dima',
   age: 25,
   country: Country.Russia,
-  lastName: "Zamulin",
-  firstName: "Dmitriy",
-  city: "Samara",
-  currency: Currency.RUB
+  lastName: 'Zamulin',
+  firstName: 'Dmitriy',
+  city: 'Samara',
+  currency: Currency.RUB,
 };
 
-describe("fetch profile data tests", () => {
-  test("success", async () => {
+describe('fetch profile data tests', () => {
+  test('success', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-    const result = await thunk.callThunk("1");
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(result.meta.requestStatus).toBe("fulfilled");
+    expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(data);
   });
 
-  test("error", async () => {
+  test('error', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk("1");
+    const result = await thunk.callThunk('1');
 
-    expect(result.meta.requestStatus).toBe("rejected");
+    expect(result.meta.requestStatus).toBe('rejected');
   });
 });

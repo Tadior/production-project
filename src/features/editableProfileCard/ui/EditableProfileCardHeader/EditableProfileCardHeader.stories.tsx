@@ -1,17 +1,17 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 export default {
-  title: "features/EditableProfileCard/EditableProfileCardHeader",
+  title: 'features/EditableProfileCard/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
   argTypes: {
-    backgroundColor: { control: "color" }
+    backgroundColor: { control: 'color' },
   },
   args: {
-    to: "/"
-  }
+    to: '/',
+  },
 } as ComponentMeta<typeof EditableProfileCardHeader>;
 
 const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => (

@@ -1,8 +1,8 @@
-import { memo, useState } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./StarRating.module.scss";
-import { Icon } from "../Icon/Icon";
-import StarIcon from "@/shared/assets/icons/star.svg";
+import { memo, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './StarRating.module.scss';
+import { Icon } from '../Icon/Icon';
+import StarIcon from '@/shared/assets/icons/star.svg';
 
 interface StarRatingProps {
   className?: string;
@@ -18,7 +18,7 @@ export const StarRating = memo((props: StarRatingProps) => {
     className,
     onSelect,
     size = 30,
-    selectedStars = 0
+    selectedStars = 0,
   } = props;
 
   const [isHovered, setIsHovered] = useState(false);
@@ -48,12 +48,12 @@ export const StarRating = memo((props: StarRatingProps) => {
   return (
 
     <div className={classNames(cls.StarRating, {}, [className])}>
-      {stars.map(starNumber => (
+      {stars.map((starNumber) => (
         <Icon
           className={classNames(
             cls.StarRating,
             { [cls.selected]: isSelected },
-            [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
+            [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
           )}
           width={size}
           height={size}

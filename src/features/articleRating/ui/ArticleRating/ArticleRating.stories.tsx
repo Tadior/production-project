@@ -1,17 +1,17 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import ArticleRating from "./ArticleRating";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import ArticleRating from './ArticleRating';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: "features/ArticleRating",
+  title: 'features/ArticleRating',
   component: ArticleRating,
   argTypes: {
-    backgroundColor: { control: "color" }
+    backgroundColor: { control: 'color' },
   },
   args: {
-    to: "/"
-  }
+    to: '/',
+  },
 } as ComponentMeta<typeof ArticleRating>;
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => (
@@ -20,41 +20,41 @@ const Template: ComponentStory<typeof ArticleRating> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {
-  articleId: "1"
+  articleId: '1',
 };
 
 Normal.decorators = [
-  StoreDecorator({ user: { authData: { id: "1" } } })
+  StoreDecorator({ user: { authData: { id: '1' } } }),
 ];
 Normal.parameters = {
   mockData: [
     {
       url: `${__API__}/article-ratings?userId=1&articleId=1`,
-      method: "GET",
+      method: 'GET',
       status: 200,
       response: [
         {
-          rate: 4
-        }
-      ]
-    }
-  ]
+          rate: 4,
+        },
+      ],
+    },
+  ],
 };
 export const WithoutRating = Template.bind({});
 WithoutRating.args = {
-  articleId: "1"
+  articleId: '1',
 };
 
 WithoutRating.decorators = [
-  StoreDecorator({ user: { authData: { id: "1" } } })
+  StoreDecorator({ user: { authData: { id: '1' } } }),
 ];
 WithoutRating.parameters = {
   mockData: [
     {
       url: `${__API__}/article-ratings?userId=1&articleId=1`,
-      method: "GET",
+      method: 'GET',
       status: 200,
-      response: []
-    }
-  ]
+      response: [],
+    },
+  ],
 };

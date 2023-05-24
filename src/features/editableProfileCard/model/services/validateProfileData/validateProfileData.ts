@@ -1,12 +1,14 @@
-import { Profile } from "@/entities/Profile";
+import { Profile } from '@/entities/Profile';
 
-import { ValidateProfileError } from "../../consts/consts";
+import { ValidateProfileError } from '../../consts/consts';
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {
     return [ValidateProfileError.NO_DATA];
   }
-  const { firstName, lastName, age, country, city } = profile;
+  const {
+    firstName, lastName, age, country, city,
+  } = profile;
 
   const errors: ValidateProfileError[] = [];
 

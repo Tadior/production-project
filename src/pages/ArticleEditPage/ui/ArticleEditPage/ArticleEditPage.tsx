@@ -1,9 +1,9 @@
-import { memo } from "react";
-import { useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { Page } from "@/widgets/Page";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./ArticleEditPage.module.scss";
+import { memo } from 'react';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Page } from '@/widgets/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
   className?: string;
@@ -19,9 +19,8 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
 
     <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
       {isEdit
-        ? t("edit page by ID =") + id
-        : t("Create new article")
-      }
+        ? t('edit page by ID =') + id
+        : t('Create new article')}
     </Page>
 
   );

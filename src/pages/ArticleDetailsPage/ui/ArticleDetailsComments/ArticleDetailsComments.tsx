@@ -1,5 +1,5 @@
 import { memo, Suspense, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Text, TextSize } from "@/shared/ui/Text";
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -12,6 +12,7 @@ import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByAr
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -20,7 +21,7 @@ interface ArticleDetailsCommentsProps {
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
   const { className, id } = props;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { t } = useTranslation("article-details");
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);

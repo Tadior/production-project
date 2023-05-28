@@ -13,9 +13,7 @@ import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import {
-  ArticleImageBlockComponent,
-} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '../../model/consts/ArticleBlockTypeConst';
@@ -91,7 +89,7 @@ export const ArticleDetails = memo(
           <HStack justify="center" max className={cls.avatarWrapper}>
             <Avatar size={200} src={article?.img} className={cls.avatar} />
           </HStack>
-          <VStack gap="4" max>
+          <VStack gap="4" max data-testid="ArticleDetails.Info">
             <Text className={cls.title} title={article?.title} text={article?.subtitle} size={TextSize.L} />
             <HStack gap="8" className={cls.articleInfo}>
               <Icon className={cls.icon} Svg={EyeIcon} />

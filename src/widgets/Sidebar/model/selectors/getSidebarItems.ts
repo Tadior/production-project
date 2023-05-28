@@ -6,40 +6,40 @@ import ProfileIcon from '@/shared/assets/icons/profile-page.svg';
 import ArticlesIcon from '@/shared/assets/icons/article.svg';
 import { SidebarItemType } from '../types/sidebar';
 import {
-  getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+  getRouteAbout,
+  getRouteArticles,
+  getRouteMain,
+  getRouteProfile,
 } from '@/shared/const/router';
 
-export const getSidebarItems = createSelector(
-  getUserAuthData,
-  (userData) => {
-    const sidebarItemsList: SidebarItemType[] = [
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+  const sidebarItemsList: SidebarItemType[] = [
+    {
+      path: getRouteMain(),
+      Icon: MainIcon,
+      text: 'main-link',
+    },
+    {
+      path: getRouteAbout(),
+      Icon: AboutIcon,
+      text: 'about-link',
+    },
+  ];
+  if (userData) {
+    sidebarItemsList.push(
       {
-        path: getRouteMain(),
-        Icon: MainIcon,
-        text: 'main-link',
+        path: getRouteProfile(userData.id),
+        Icon: ProfileIcon,
+        text: 'profile-link',
+        authOnly: true,
       },
       {
-        path: getRouteAbout(),
-        Icon: AboutIcon,
-        text: 'about-link',
+        path: getRouteArticles(),
+        Icon: ArticlesIcon,
+        text: 'articles-link',
+        authOnly: true,
       },
-    ];
-    if (userData) {
-      sidebarItemsList.push(
-        {
-          path: getRouteProfile(userData.id),
-          Icon: ProfileIcon,
-          text: 'profile-link',
-          authOnly: true,
-        },
-        {
-          path: getRouteArticles(),
-          Icon: ArticlesIcon,
-          text: 'articles-link',
-          authOnly: true,
-        },
-      );
-    }
-    return sidebarItemsList;
-  },
-);
+    );
+  }
+  return sidebarItemsList;
+});

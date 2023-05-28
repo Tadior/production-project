@@ -4,7 +4,7 @@ import cls from './Card.module.scss';
 
 export enum CardTheme {
   NORMAL = 'normal',
-  OUTLINED = 'outlined'
+  OUTLINED = 'outlined',
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -24,10 +24,14 @@ export const Card = memo((props: CardProps) => {
   } = props;
 
   return (
-
-    <div className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme]])} {...otherProps}>
+    <div
+      className={classNames(cls.Card, { [cls.max]: max }, [
+        className,
+        cls[theme],
+      ])}
+      {...otherProps}
+    >
       {children}
     </div>
-
   );
 });

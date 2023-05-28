@@ -23,9 +23,7 @@ Normal.args = {
   articleId: '1',
 };
 
-Normal.decorators = [
-  StoreDecorator({ user: { authData: { id: '1' } } }),
-];
+Normal.decorators = [StoreDecorator({ user: { authData: { id: '1' } } })];
 Normal.parameters = {
   mockData: [
     {

@@ -1,12 +1,16 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from './articleDetails';
 
 describe('get profile data test', () => {
   test('get data', () => {
     const data = {
       id: '1',
       title: 'title',
-    }
+    };
     const state: DeepPartial<StateSchema> = {
       articleDetails: {
         data,
@@ -15,7 +19,7 @@ describe('get profile data test', () => {
     expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
   });
   test('if error', () => {
-    const errorValue = 'Some error'
+    const errorValue = 'Some error';
     const state = {
       articleDetails: {
         error: errorValue,

@@ -36,7 +36,6 @@ Normal.args = {
         username: 'Alexander',
       },
     },
-
   ],
 };
 export const Loading = Template.bind({});

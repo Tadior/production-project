@@ -19,8 +19,9 @@ export const resetProfile = (profileid: string) => {
       country: 'Belarus',
       city: 'Moscow',
       username: 'testuser',
-      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-'
-        + 'xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU',
+      avatar:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-Ux29e_Mrd0RrU7-' +
+        'xm9brmZqr9Y9cxXYr_pcfJvzgKO1VRwLj_41YDrvYdwUrpSI56c&usqp=CAU',
     },
   });
 };

@@ -16,17 +16,18 @@ interface AvatarProps {
 }
 
 export function Avatar(props: PropsWithChildren<AvatarProps>) {
-  const {
-    className,
-    src,
-    size,
-    alt,
-    fallbackInverted,
-  } = props;
+  const { className, src, size, alt, fallbackInverted } = props;
   const { t } = useTranslation();
   const mods: Mods = {};
   const fallback = <Skeleton width={size} height={size} border="50%" />;
-  const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={ProfileIcon} />;
+  const errorFallback = (
+    <Icon
+      inverted={fallbackInverted}
+      width={size}
+      height={size}
+      Svg={ProfileIcon}
+    />
+  );
 
   const styles = useMemo<CSSProperties>(
     () => ({

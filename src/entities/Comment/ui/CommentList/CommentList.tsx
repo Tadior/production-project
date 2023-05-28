@@ -27,20 +27,18 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-
     <VStack gap="16" max className={classNames('', {}, [className])}>
-      {
-        comments?.length
-          ? comments.map((commentItem) => (
-            <CommentCard
-              isLoading={isLoading}
-              comment={commentItem}
-              key={commentItem.id}
-            />
-          ))
-          : <Text text={t('Comments are empty')} />
-      }
+      {comments?.length ? (
+        comments.map((commentItem) => (
+          <CommentCard
+            isLoading={isLoading}
+            comment={commentItem}
+            key={commentItem.id}
+          />
+        ))
+      ) : (
+        <Text text={t('Comments are empty')} />
+      )}
     </VStack>
-
   );
 });

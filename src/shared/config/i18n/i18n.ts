@@ -9,7 +9,8 @@ declare module 'i18next' {
   }
 }
 
-i18n.use(Backend)
+i18n
+  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({

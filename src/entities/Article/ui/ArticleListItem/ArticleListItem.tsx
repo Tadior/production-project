@@ -26,9 +26,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className, article, view, target,
-  } = props;
+  const { className, article, view, target } = props;
   const [isHover, bindHover] = useHover();
   const { t } = useTranslation();
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -40,10 +38,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
-      ((block) => block.type === ArticleBlockType.TEXT),
+      (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
     return (
-
       <div
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         data-testid="ArticleListItem"
@@ -63,23 +60,22 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
           />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-              <Button theme={ButtonTheme.OUTLINE}>
-                {t('read article')}
-              </Button>
+              <Button theme={ButtonTheme.OUTLINE}>{t('read article')}</Button>
             </AppLink>
             {views}
           </div>
         </Card>
       </div>
-
     );
   }
   return (
-
     <AppLink
       target={target}
       to={getRouteArticleDetails(article.id)}

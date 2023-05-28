@@ -59,7 +59,10 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
 
   if (error) {
     return (
-      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack
+        justify="center"
+        className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+      >
         <Text
           theme={TextTheme.ERROR}
           title={t('profile-error-title')}
@@ -75,7 +78,11 @@ export function ProfileCard(props: PropsWithChildren<ProfileCardProps>) {
   };
 
   return (
-    <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack
+      gap="8"
+      max
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
       {data?.avatar && (
         <HStack max justify="center" className={cls.avatarWrapper}>
           <Avatar src={data?.avatar} />

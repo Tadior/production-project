@@ -9,9 +9,9 @@ import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface ListboxItem {
-  value: string,
-  content: ReactNode,
-  disabled?: boolean
+  value: string;
+  content: ReactNode;
+  disabled?: boolean;
 }
 
 interface ListboxProps {
@@ -50,11 +50,11 @@ export function ListBox(props: ListboxProps) {
         onChange={onChange}
       >
         <HListbox.Button aria-disabled={readonly} className={popupCls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListbox.Button>
-        <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
+        <HListbox.Options
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
           {items?.map((item) => (
             <HListbox.Option
               key={item.value}
@@ -63,15 +63,19 @@ export function ListBox(props: ListboxProps) {
               disabled={item.disabled}
             >
               {({ active, selected }) => (
-                <li className={classNames(cls.item, {
-                  [popupCls.active]: active,
-                  [popupCls.disabled]: item.disabled,
-                }, [])}
+                <li
+                  className={classNames(
+                    cls.item,
+                    {
+                      [popupCls.active]: active,
+                      [popupCls.disabled]: item.disabled,
+                    },
+                    [],
+                  )}
                 >
                   {selected && '!!!'}
                   {item.content}
                 </li>
-
               )}
             </HListbox.Option>
           ))}

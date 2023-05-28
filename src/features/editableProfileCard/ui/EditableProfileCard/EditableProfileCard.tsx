@@ -8,7 +8,10 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -108,14 +111,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack
-        gap="8"
-        max
-        className={classNames('', {}, [className])}
-      >
+      <VStack gap="8" max className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
-        {validateErrors?.length
-          && validateErrors?.map((error) => (
+        {validateErrors?.length &&
+          validateErrors?.map((error) => (
             <Text
               key={error}
               theme={TextTheme.ERROR}
@@ -139,6 +138,5 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         />
       </VStack>
     </DynamicModuleLoader>
-
   );
 });

@@ -12,7 +12,11 @@ export default {
     to: '/',
   },
   decorators: [
-    (Story) => <div style={{ padding: 100 }}><Story /></div>,
+    (Story) => (
+      <div style={{ padding: 100 }}>
+        <Story />
+      </div>
+    ),
   ],
 } as ComponentMeta<typeof ListBox>;
 

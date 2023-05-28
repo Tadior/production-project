@@ -31,6 +31,5 @@ Normal.args = {
     {
       content: 'third',
     },
-
   ],
 };

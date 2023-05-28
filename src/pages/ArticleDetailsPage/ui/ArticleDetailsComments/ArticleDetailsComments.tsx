@@ -19,31 +19,34 @@ interface ArticleDetailsCommentsProps {
   id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-  const { className, id } = props;
-  const dispatch = useAppDispatch();
-  const { t } = useTranslation('article-details');
-  const comments = useSelector(getArticleComments.selectAll);
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+export const ArticleDetailsComments = memo(
+  (props: ArticleDetailsCommentsProps) => {
+    const { className, id } = props;
+    const dispatch = useAppDispatch();
+    const { t } = useTranslation('article-details');
+    const comments = useSelector(getArticleComments.selectAll);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+    const onSendComment = useCallback(
+      (text: string) => {
+        dispatch(addCommentForArticle(text));
+      },
+      [dispatch],
+    );
 
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-  });
+    useInitialEffect(() => {
+      dispatch(fetchCommentsByArticleId(id));
+    });
 
-  return (
+    return (
+      <VStack gap="16" max className={classNames('', {}, [className])}>
+        <Text size={TextSize.L} title={t('Comments')} />
+        <Suspense fallback={<Loader />}>
+          <AddCommentForm onSendComment={onSendComment} />
+        </Suspense>
 
-    <VStack gap="16" max className={classNames('', {}, [className])}>
-      <Text size={TextSize.L} title={t('Comments')} />
-      <Suspense fallback={<Loader />}>
-        <AddCommentForm onSendComment={onSendComment} />
-      </Suspense>
-
-      <CommentList comments={comments} isLoading={commentsIsLoading} />
-    </VStack>
-
-  );
-});
+        <CommentList comments={comments} isLoading={commentsIsLoading} />
+      </VStack>
+    );
+  },
+);

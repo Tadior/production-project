@@ -1,6 +1,4 @@
-import {
-  memo, PropsWithChildren, useMemo, useState,
-} from 'react';
+import { memo, PropsWithChildren, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -23,9 +21,13 @@ export const Sidebar = memo((props: PropsWithChildren<SidebarProps>) => {
     setCollapsed((prev) => !prev);
   };
 
-  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <SidebarItem item={item} collapsed={collapsed} key={item.path} />
-  )), [collapsed, sidebarItemsList]);
+  const itemsList = useMemo(
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed, sidebarItemsList],
+  );
 
   return (
     <aside

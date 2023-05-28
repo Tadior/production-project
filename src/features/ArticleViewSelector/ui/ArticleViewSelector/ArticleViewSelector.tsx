@@ -9,7 +9,7 @@ import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
   className?: string;
-  view: ArticleView,
+  view: ArticleView;
   onViewClick?: (view: ArticleView) => void;
 }
 
@@ -17,7 +17,8 @@ const viewTypes = [
   {
     view: ArticleView.SMALL,
     icon: TiledIcon,
-  }, {
+  },
+  {
     view: ArticleView.BIG,
     icon: ListIcon,
   },
@@ -31,7 +32,6 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   };
 
   return (
-
     <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
         <Button
@@ -41,11 +41,12 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
         >
           <Icon
             Svg={viewType.icon}
-            className={classNames(cls.icon, { [cls.notSelected]: viewType.view !== view })}
+            className={classNames(cls.icon, {
+              [cls.notSelected]: viewType.view !== view,
+            })}
           />
         </Button>
       ))}
     </div>
-
   );
 });

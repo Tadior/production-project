@@ -25,14 +25,11 @@ const article = {
   user: {
     id: '1',
     username: 'Admin',
-    avatar: 'https://cs12.pikabu.ru/post_img/2021/11/20/0/163735713124736751.jpg',
+    avatar:
+      'https://cs12.pikabu.ru/post_img/2021/11/20/0/163735713124736751.jpg',
   },
   createdAt: '26.02.2022',
-  type: [
-    'IT',
-    'Politics',
-    'something',
-  ],
+  type: ['IT', 'Politics', 'something'],
   blocks: [
     {
       id: '1',

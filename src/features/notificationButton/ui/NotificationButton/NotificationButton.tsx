@@ -37,9 +37,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <Popover
           className={classNames(cls.NotificationButton, {}, [])}
           direction="bottom left"
-          trigger={
-            trigger
-          }
+          trigger={trigger}
         >
           <NotificationList className={cls.notifications} />
         </Popover>
@@ -51,8 +49,6 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         </Drawer>
         ;
       </MobileView>
-
     </div>
-
   );
 });

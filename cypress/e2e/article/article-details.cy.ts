@@ -11,7 +11,8 @@ describe('user enter at Article details page', () => {
     cy.removeArticle(currentArticleId);
   });
 
-  it('and see the article', () => {
+  it('and see the article with fixture', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetails.Info').should('exist');
   });
   it('and see the recommendation`s list', () => {

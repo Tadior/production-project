@@ -69,7 +69,7 @@ const article = {
       ],
     },
   ],
-}
+};
 
 describe('fetch article id tests', () => {
   test('success', async () => {

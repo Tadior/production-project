@@ -18,9 +18,7 @@ const options = [
 
 export const CurrencySelect = memo(
   (props: PropsWithChildren<CurrencySelectProps>) => {
-    const {
-      className, value, onChange, readonly,
-    } = props;
+    const { className, value, onChange, readonly } = props;
 
     const { t } = useTranslation('profile');
 

@@ -29,7 +29,6 @@ export const NotificationList = memo((props: NotificationListProps) => {
   }
 
   return (
-
     <VStack
       gap="16"
       max
@@ -39,6 +38,5 @@ export const NotificationList = memo((props: NotificationListProps) => {
         <NotificationItem key={item.id} item={item} />
       ))}
     </VStack>
-
   );
 });

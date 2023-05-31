@@ -1,3 +1,4 @@
+export { initAuthData } from './model/services/initAuthData';
 export { saveJsonSettings } from '@/entities/User/model/services/saveJsonSettings';
 export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 export { userReducer, userActions } from './model/slice/userSlice';

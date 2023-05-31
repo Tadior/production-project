@@ -17,8 +17,8 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import { ArticleRating } from '@/features/articleRating';
 import { getFeatureFlag } from '@/shared/lib/features';
 import { Counter } from '@/entities/Counter';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 import { Card } from '@/shared/ui/Card';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -42,12 +42,6 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
     return null;
   }
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Article rating is coming soon')}</Card>,
-  });
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -55,7 +49,11 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
           {isCounterEnabled && <Counter />}
-          {articleRatingCard}
+          <ToggleFeatures
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('Оценка статей скоро появится')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

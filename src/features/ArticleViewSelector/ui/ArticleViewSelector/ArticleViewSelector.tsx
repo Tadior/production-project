@@ -1,9 +1,9 @@
 import { memo } from 'react';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ListIcon from '@/shared/assets/icons/articlesTypeBigIcon.svg';
 import TiledIcon from '@/shared/assets/icons/articlesTypeSmallIcon.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
 
@@ -40,6 +40,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
           onClick={onClick(viewType.view)}
         >
           <Icon
+            width={24}
+            height={24}
             Svg={viewType.icon}
             className={classNames(cls.icon, {
               [cls.notSelected]: viewType.view !== view,

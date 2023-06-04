@@ -26,21 +26,6 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(
-      initAuthData.fulfilled,
-      (state, { payload }: PayloadAction<User>) => {
-        if (state.authData) {
-          state.authData = payload;
-          setFeatureFlags(payload.features);
-          state._inited = true;
-        }
-      },
-    );
-    builder.addCase(initAuthData.rejected, (state) => {
-      if (state.authData) {
-        state._inited = true;
-      }
-    });
-    builder.addCase(
       saveJsonSettings.fulfilled,
       (state, { payload }: PayloadAction<JsonSettings>) => {
         if (state.authData) {
@@ -48,10 +33,20 @@ export const userSlice = createSlice({
         }
       },
     );
+    builder.addCase(
+      initAuthData.fulfilled,
+      (state, { payload }: PayloadAction<User>) => {
+        state.authData = payload;
+        setFeatureFlags(payload.features);
+        state._inited = true;
+      },
+    );
+    builder.addCase(initAuthData.rejected, (state) => {
+      state._inited = true;
+    });
   },
 });
 
 // Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
-
 export const { reducer: userReducer } = userSlice;

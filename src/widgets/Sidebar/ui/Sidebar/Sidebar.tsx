@@ -41,7 +41,7 @@ export const Sidebar = memo((props: PropsWithChildren<SidebarProps>) => {
           data-testid="sidebar"
           className={classNames(
             cls.SidebarRedesigned,
-            { [cls.collapsed]: collapsed },
+            { [cls.collapsedRedesigned]: collapsed },
             [className],
           )}
         >
@@ -51,11 +51,17 @@ export const Sidebar = memo((props: PropsWithChildren<SidebarProps>) => {
           </VStack>
           <Icon
             Svg={ArrowIcon}
+            width={20}
+            height={20}
             data-testid="sidebar-toggle"
             onClick={onToggle}
             className={cls.collapseBtn}
             clickable
           />
+          <div className={cls.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher short={collapsed} className={cls.lang} />
+          </div>
         </aside>
       }
       off={

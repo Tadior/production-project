@@ -2,7 +2,7 @@ import { CSSProperties, PropsWithChildren, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import ProfileIcon from '../../../assets/icons/profile.svg';
 import { Icon } from '../../deprecated/Icon';
 import { Skeleton } from '../Sceleton';

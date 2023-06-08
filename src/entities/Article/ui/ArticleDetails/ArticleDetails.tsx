@@ -1,10 +1,10 @@
 import { memo, PropsWithChildren, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Sceleton';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,

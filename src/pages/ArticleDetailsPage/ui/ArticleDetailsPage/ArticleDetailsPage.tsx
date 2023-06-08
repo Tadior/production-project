@@ -1,8 +1,8 @@
 import { memo, PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {

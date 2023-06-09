@@ -1,8 +1,17 @@
-.notSelected {
-  fill: var(--secondary-color);
+.ArticleViewSelector {
+  .notSelected {
+    fill: var(--secondary-color);
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-.icon {
-  width: 30px;
-  height: 30px;
+
+.ArticleViewSelectorRedesigned {
+  .notSelected {
+    color: var(--light-bg-redesigned);
+  }
 }

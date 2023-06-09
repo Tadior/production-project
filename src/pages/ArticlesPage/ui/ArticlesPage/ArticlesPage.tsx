@@ -14,6 +14,10 @@ import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfinit
 import { ArticlePageFilters } from '../../ui/ArticlesPageFilters/ArticlePageFilters';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -34,16 +38,42 @@ function ArticlesPage(props: PropsWithChildren<ArticlesPageProps>) {
     dispatch(initArticlesPage(searchParams));
   });
 
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={
+            <Page
+              data-testid="ArticlesPage"
+              onScrollEnd={onLoadNextPart}
+              className={classNames(cls.ArticlesPageRedesigned, {}, [
+                className,
+              ])}
+            >
+              <ArticleInfiniteList className={cls.list} />
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onLoadNextPart}
+          className={classNames(cls.ArticlesPage, {}, [className])}
+        >
+          <ArticlePageFilters />
+          <ArticleInfiniteList className={cls.list} />
+        </Page>
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cls.ArticlesPage, {}, [className])}
-        data-testid="ArticlesPage"
-      >
-        <ArticlePageFilters />
-        <ArticleInfiniteList className={cls.list} />
-      </Page>
+      {content}
     </DynamicModuleLoader>
   );
 }

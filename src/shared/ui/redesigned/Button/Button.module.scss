@@ -2,9 +2,15 @@
   cursor: pointer;
   color: var(--text-redesigned);
   padding: 6px 15px;
+  display: flex;
+  align-items: center;
 
   &:hover {
     color: var(--accent-redesigned);
+
+    .addonLeft svg, .addonRight svg {
+      color: var(--accent-redesigned-redesigned);
+    }
   }
 }
 
@@ -60,4 +66,14 @@
 
 .fullWidth {
   width: 100%;
+}
+
+.addonLeft svg, .addonRight svg {
+  color: var(--hint-redesigned);
+  display: flex;
+  align-items: center;
+}
+
+.withAddon {
+  padding: 0 16px;
 }

@@ -8,6 +8,9 @@ import cls from './ListBox.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
+import ArrowIcon from '../../../../../assets/icons/redesigned/arrow.svg';
+import { Icon } from '../../../Icon';
+
 export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
@@ -54,7 +57,12 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         onChange={onChange}
       >
         <HListBox.Button aria-disabled={readonly} className={cls.trigger}>
-          <Button variant="filled" disabled={readonly}>
+          <Button
+            variant="filled"
+            disabled={readonly}
+            fullWidth
+            addonRight={<Icon Svg={ArrowIcon} />}
+          >
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>

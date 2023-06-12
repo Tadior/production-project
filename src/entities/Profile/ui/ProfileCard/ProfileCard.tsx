@@ -4,7 +4,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 
 import { Profile } from '../../model/types/profile';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import {
   ProfileCardDeprecated,
   ProfileCardDeprecatedError,

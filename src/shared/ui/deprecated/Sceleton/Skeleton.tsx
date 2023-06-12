@@ -1,4 +1,5 @@
 import type { CSSProperties, PropsWithChildren } from 'react';
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Skeleton.module.scss';
 
@@ -9,10 +10,7 @@ interface SkeletonProps {
   border?: string;
 }
 
-/*
- *@deprecated
- */
-export function Skeleton(props: PropsWithChildren<SkeletonProps>) {
+export const Skeleton = memo((props: PropsWithChildren<SkeletonProps>) => {
   const { className, height, width, border } = props;
 
   const styles: CSSProperties = {
@@ -24,4 +22,4 @@ export function Skeleton(props: PropsWithChildren<SkeletonProps>) {
   return (
     <div className={classNames(cls.Skeleton, {}, [className])} style={styles} />
   );
-}
+});

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 /* import { Notification } from "../../model/types/notification"; */
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Text } from '@/shared/ui/redesigned/Text';
 

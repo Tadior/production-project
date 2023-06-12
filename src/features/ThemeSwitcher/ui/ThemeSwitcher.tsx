@@ -7,7 +7,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import ThemeIconDeprecated from '../../../shared/assets/icons/theme-light.svg';
 import ThemeIcon from '../../../shared/assets/icons/redesigned/theme-switcher.svg';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps {

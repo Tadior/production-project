@@ -10,7 +10,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/test';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 interface PageProps extends TestProps {
   className?: string;

@@ -5,8 +5,9 @@ import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Sceleton'
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '../../model/consts/ArticleViewConst';
 import cls from './ArticleListItem.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features/lib/toggleFeatures';
 
 interface ArticleListItemSkeletonProps {
   className?: string;
@@ -17,17 +18,18 @@ export const ArticleListItemSkeleton = memo(
   (props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;
 
+    const mainClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => cls.ArticleListItemRedesigned,
+      off: () => cls.ArticleListItem,
+    });
+
     if (view === ArticleView.BIG) {
       return (
         <ToggleFeatures
           feature="isAppRedesigned"
           on={
-            <div
-              className={classNames(cls.ArticleListItem, {}, [
-                className,
-                cls[view],
-              ])}
-            >
+            <div className={classNames(mainClass, {}, [className, cls[view]])}>
               <Card className={cls.card}>
                 <div className={cls.header}>
                   <Skeleton border="50%" height={30} width={30} />
@@ -82,12 +84,7 @@ export const ArticleListItemSkeleton = memo(
       <ToggleFeatures
         feature="isAppRedesigned"
         on={
-          <div
-            className={classNames(cls.ArticleListItem, {}, [
-              className,
-              cls[view],
-            ])}
-          >
+          <div className={classNames(mainClass, {}, [className, cls[view]])}>
             <Card className={cls.card}>
               <div className={cls.imageWrapper}>
                 <Skeleton width={200} height={200} className={cls.img} />

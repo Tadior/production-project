@@ -3,8 +3,11 @@
   "Article is not found": "",
   "Article rating is coming soon": "",
   "Comments": "",
+  "Edit": "Edit",
   "Recommendations": "Recommendations",
   "back to list": "back to list",
+  "{{count}} views": "{{count}} views",
+  "{{count}} views_plural": "",
   "Оценка статей скоро появится": "",
   "Статья не найдена": ""
 }

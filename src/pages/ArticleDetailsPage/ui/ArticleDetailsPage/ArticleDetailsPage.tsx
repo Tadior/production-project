@@ -19,6 +19,9 @@ import { ArticleRating } from '@/features/articleRating';
 import { getFeatureFlag } from '@/shared/lib/features';
 import { Counter } from '@/entities/Counter';
 import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -44,20 +47,42 @@ function ArticleDetailsPage(props: PropsWithChildren<ArticleDetailsPageProps>) {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <VStack gap="16" max>
-          <ArticleDetailsPageHeader />
-          <ArticleDetails id={id} />
-          {isCounterEnabled && <Counter />}
-          <ToggleFeatures
-            feature="isArticleRatingEnabled"
-            on={<ArticleRating articleId={id} />}
-            off={<Card>{t('Оценка статей скоро появится')}</Card>}
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <StickyContentLayout
+            content={
+              <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+              >
+                <VStack gap="16" max>
+                  <DetailsContainer />
+                  <ArticleRating articleId={id} />
+                  <ArticleRecommendationsList />
+                  <ArticleDetailsComments id={id} />
+                </VStack>
+              </Page>
+            }
+            right={<AdditionalInfoContainer />}
           />
-          <ArticleRecommendationsList />
-          <ArticleDetailsComments id={id} />
-        </VStack>
-      </Page>
+        }
+        off={
+          <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <VStack gap="16" max>
+              <ArticleDetailsPageHeader />
+              <ArticleDetails id={id} />
+              {isCounterEnabled && <Counter />}
+              <ToggleFeatures
+                feature="isArticleRatingEnabled"
+                on={<ArticleRating articleId={id} />}
+                off={<Card>{t('Оценка статей скоро появится')}</Card>}
+              />
+              <ArticleRecommendationsList />
+              <ArticleDetailsComments id={id} />
+            </VStack>
+          </Page>
+        }
+      />
     </DynamicModuleLoader>
   );
 }

@@ -25,5 +25,7 @@
     "password": "123",
     "roles": ["ADMIN"],
     "avatar": "https://cs12.pikabu.ru/post_img/2021/11/20/0/163735713124736751.jpg"
-  }
+  },
+  "Edit": "Edit",
+  "{{count}} views": "{{count}} views"
 }

@@ -3,5 +3,9 @@
   "Article error": "An error occurred while loading the article",
   "Comments": "Comments",
   "back to list": "Back to list",
-  "Recommendations": "Recommendations"
+  "Recommendations": "Recommendations",
+  "Edit": "Edit",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_others": "{{count}} views"
 }

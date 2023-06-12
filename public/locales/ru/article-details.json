@@ -3,5 +3,10 @@
   "Article error": "Произошла ошибка при загрузке статьи",
   "Comments": "Комментарии",
   "back to list": "Вернуться к статьям",
-  "Recommendations": "Рекоммендации"
+  "Recommendations": "Рекоммендации",
+  "Edit": "Редактирвать",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотра",
+  "{{count}} views_many": "{{count}} просмотров"
 }

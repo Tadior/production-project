@@ -56,15 +56,15 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button aria-disabled={readonly} className={cls.trigger}>
-          <Button
-            variant="filled"
-            disabled={readonly}
-            fullWidth
-            addonRight={<Icon Svg={ArrowIcon} />}
-          >
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <HListBox.Button
+          as={Button}
+          aria-disabled={readonly}
+          variant="filled"
+          fullWidth
+          addonRight={<Icon Svg={ArrowIcon} />}
+          className={cls.trigger}
+        >
+          {selectedItem?.content ?? defaultValue}
         </HListBox.Button>
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}

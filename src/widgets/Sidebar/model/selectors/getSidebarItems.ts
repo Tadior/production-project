@@ -5,7 +5,7 @@ import AboutIconDeprecated from '@/shared/assets/icons/about.svg';
 import ProfileIconDeprecated from '@/shared/assets/icons/profile-page.svg';
 import ArticleIconDeprecated from '@/shared/assets/icons/article.svg';
 import MainIcon from '@/shared/assets/icons/redesigned/Home.svg';
-import AboutIcon from '@/shared/assets/icons/redesigned/info.svg';
+import AboutIcon from '@/shared/assets/icons/redesigned/Info.svg';
 import ProfileIcon from '@/shared/assets/icons/redesigned/Avatar.svg';
 import ArticleIcon from '@/shared/assets/icons/redesigned/article.svg';
 import { SidebarItemType } from '../types/sidebar';
